@@ -1,0 +1,470 @@
+$white: #fff;
+$black:#000;
+$gold: rgba(234, 173, 37, 1);
+$purple: rgba(129, 2, 141, 1);
+$whiteTransparent: rgba(255, 255, 255, 0.4);
+$goldTransparent: rgba(234, 173, 37, 0.6);
+$purpleTransparent: rgba(129, 2, 141, 0.4);
+$tablet:767px;
+$desktop:1199px;
+
+@mixin transition($time) {
+	transition:$time ease all;
+	-webkit-transition:$time ease all;
+	-moz-transition:$time ease all;
+	-ms-transition:$time ease all;
+	-o-transition:$time ease all;
+}
+
+@font-face {
+    font-family: 'Bebas';
+    src: url('../assets/fonts/bebasneue_regular-webfont.woff2') format('woff2'),
+         url('../assets/fonts/bebasneue_regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bebas';
+    src: url('../assets/fonts/bebasneue_bold-webfont.woff2') format('woff2'),
+         url('../assets/fonts/bebasneue_bold-webfont.woff') format('woff');
+    font-style: normal;
+    font-weight:bold;
+
+}
+
+body,html{
+	font-family:Open Sans;
+	font-weight:100;
+	font-size: 16px;
+	line-height: 1.5;
+	background:#f3f3f3;
+	width:100%;
+	overflow-x:hidden;
+	margin:0;
+
+}
+
+h1, h2, h3, h4, h5, h6, a{
+	font-family:Bebas;
+}
+
+a.sexy{
+	letter-spacing: 2.78px;
+	border-radius: 10px;
+	padding: 10px 40px;
+	border:1px solid $white;
+	text-decoration: none;
+	background:transparent;
+	color:$white;
+	font-weight:bold;
+	@include transition(0.3s);
+
+}
+a.sexy.highlight{
+	border:1px solid $gold;
+	background:$goldTransparent;
+}
+a.sexy:hover{
+	background:$whiteTransparent;
+}
+a.purple{
+	border:2px solid $purple !important;
+	color:$purple !important;
+}
+a.purple:hover{
+	background:$gold;
+}
+.buttons{
+	margin-top:10px;
+}
+*{
+	@include transition(0.2s);
+}
+.signup{
+	*{
+		margin:0;
+		display: inline;
+	}
+	input{
+		min-width: 50%;
+		border-radius:10px 0px 0px 10px;
+		appearance:none;
+		-webkit-appearance:none;
+		outline: none;
+		border:1px solid $gold;
+		background:transparent;
+		padding:5px 10px;
+		font-size:14px;
+		@media (max-width: $tablet) {
+			display:block;
+			margin: auto !important;
+			margin-bottom:0px;
+			width:80%;
+			border-radius:10px 10px 0 0;
+			padding:10px 20px;
+		}
+	}	
+	a{
+		border-top:1px solid $gold;
+		border-right:1px solid $gold;
+		border-bottom:1px solid $gold;
+		border-radius:0px 10px 10px 0px;
+		background:$goldTransparent;
+		text-decoration:none;
+		color:$white;
+		border-color: $gold;
+		padding:7px 20px;
+		margin-left:0 !important;
+		margin-right:0 !important;
+		letter-spacing:2.78px;
+		@media (max-width: $tablet) {
+			display:block;
+			margin: auto !important;
+			margin-bottom:0px;
+			width:80%;
+			border-radius:0px 0px 10px 10px;
+		}
+	}
+}
+.mobileOnly{
+	display:none;
+	@media (max-width: $tablet) {
+		display:block;
+	}
+}
+.marginTop20{
+	margin-top:20px;
+}
+.marginTop40{
+	margin-top:40px;
+}
+#splash{
+	background:url('../assets/images/splash.jpg');
+	background-size: cover;
+	color: $white;
+	.overlay{
+		background: rgba(33,33,33,0.96); /* Old browsers */
+		background: -moz-linear-gradient(top, rgba(33,33,33,0.96) 0%, rgba(0,0,0,0.96) 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(top, rgba(33,33,33,0.96) 0%,rgba(0,0,0,0.96) 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom, rgba(33,33,33,0.96) 0%,rgba(0,0,0,0.96) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		padding-top: 15%;
+		padding-bottom: 10%;
+	}
+	*{
+		margin:0;
+	}
+	.container{
+		margin:auto;
+	}
+	h1{
+		max-width: 800px;
+		margin: auto;
+		font-weight:normal;
+		font-size:3.8em;
+		@media (max-width: $tablet) {
+			font-size: 2.2em;
+			max-width: 80%;
+		}
+	}
+	.row{
+		margin-top: 20px;
+	}
+	a{
+		margin-right: 10px;
+		margin-left: 10px;
+	}
+	.buttons, .signup{
+		margin-top:30px;
+
+		a{
+			@media (max-width: $tablet) {
+				display:block;
+				margin: auto;
+				margin-bottom:20px;
+				width:80%;
+			}
+		}
+	}
+	.signup{
+
+	}
+}
+
+.generalSection{
+	.container{
+		padding:40px;
+	}
+
+	h1{
+		font-size:3em;
+		font-weight:bold;
+		letter-spacing:1.88px;
+		@media (max-width: $tablet) {
+			font-size:2em;
+		}
+	}
+}
+
+.lightSection{
+	color:$black;
+	h1, h2, h3, h4, h5, h6{
+		color: $purple;
+	}
+}
+
+
+#why{
+	.whyPoints{
+		margin-top: 40px;
+
+		.whyPoint{
+			padding:20px 40px;
+			background:#fff;
+			margin-bottom: 40px;
+			position:relative;
+			p{
+				width:70%;
+				text-align: left;
+				margin:0;
+				@media (max-width: $tablet) {
+					width:100%;
+				}
+			}
+			.circle{
+				height:15px;
+				width:15px;
+				border-radius: 100%;
+				display:inline-block;
+				vertical-align: middle;
+			}
+			.purple{
+				color:$purple;
+				margin-right:20px;
+				.circle{
+					background:$purple;
+				}
+			}
+			.light{
+				color:#d5d1db;
+				.circle{
+					background:#d5d1db;
+				}
+			}
+			img{
+				width:60%;
+				max-width:100px;
+				margin: auto;
+				margin-top:10px;
+				margin-bottom:-20px;
+			}
+			img:nth-child(2n+1){
+				margin-top:0px;
+				margin-bottom:10px;
+			}
+		}
+		.whyPoint:nth-child(2n){
+			p{
+				margin-left:25%;
+				@media (max-width: $tablet) {
+					margin-left:0;
+				}
+			}
+		}
+		.whyPoint:nth-child(2n+1):after{
+			content:'';
+			background:url('../assets/images/why1.png');
+			background-size:contain;
+			background-repeat: no-repeat;
+			height: 200%;
+			width:150px;
+			display:block;
+			position: absolute;
+			right: 60px;
+			top:-40px;
+			@media (max-width: $tablet) {
+				display:none;
+			}
+		}
+		.whyPoint:nth-child(2n):before{
+			content:'';
+			background:url('../assets/images/why2.png');
+			background-size:contain;
+			background-repeat: no-repeat;
+			height: 200%;
+			width:150px;
+			display:block;
+			position: absolute;
+			left: 10px;
+			bottom:-70px;
+			@media (max-width: $tablet) {
+				display:none;
+			}
+		}
+		.whyPoint:nth-child(3):after{
+			content:'';
+			background:url('../assets/images/why3.png');
+			background-size:contain;
+			background-repeat: no-repeat;
+			height: 100%;
+			width:120px;
+			right: 70px;
+			top:20px;
+		}
+		.whyPoint:nth-child(4):before{
+			content:'';
+			background:url('../assets/images/why4.png');
+			background-size:contain;
+			background-repeat: no-repeat;
+			height: 200%;
+			width:150px;
+			left: 30px;
+			bottom:-40px;
+		}
+	}
+}
+
+#where{
+	img{
+		width:80%;
+	}
+	p{
+		width:80%;
+		max-width:800px;
+		margin:auto;
+		@media (max-width: $tablet) {
+			width:100%;
+		}
+	}
+	.buttons a{
+		margin-left:10px;
+		margin-right:10px;
+		@media (max-width: $tablet) {
+			display:block;
+			margin-bottom:10px;
+		}
+	}
+}
+
+#logoQuilt{
+	background:#eee;
+
+	img{
+		height:40px;
+		margin-left:40px;
+		margin-right:40px;
+		@media (max-width: $tablet) {
+			height:30px;
+			margin-left:10px;
+			margin-right:10px;
+		}
+	}
+	img:nth-child(3){
+		@media (max-width: $tablet) {
+		margin-top:30px;
+		}
+	}
+}
+
+#makeDifference{
+	.program{
+		background:#fff;
+		margin:0px 10px 20px 10px;
+		.heading{
+			background:url('../assets/images/program1.jpg');
+			background-position: center center;
+			background-size:cover;
+			padding:40px;
+			h3{
+				letter-spacing:1.88px;
+				color:#fff;
+				background:none;
+				line-height:1.3;
+				display:block;
+			}
+		}
+		.heading.second{
+			background:url('../assets/images/program2.jpg');
+			background-position: center center;
+			background-size:cover;
+		}
+		.details{
+			padding:30px;
+			font-size:14px;
+			p{
+				margin:0;
+				text-align: left;
+			}
+			a{
+				margin:auto;
+				display:inline-block;
+				margin-top:20px;
+			}
+		}
+	}
+}
+nav{
+	padding:20px;
+	position:absolute;
+	width:100%;
+	top:0;
+	display:block;
+	background:transparent;
+
+	img{
+		display:block;
+		padding:10px;
+		@media (max-width: $desktop) {
+			width:150px;
+			margin:auto;
+		}
+	}
+	.links{
+		text-align:right;
+		@media (max-width: $desktop) {
+			display:none;
+		}
+	}
+	a{
+		margin-top:40px;
+		display:inline-block;
+		margin-left:20px;
+		color:#fff;
+		letter-spacing:1px;
+		text-decoration:none !important;
+
+	}
+	a.hot{
+		background:#fff;
+		color:#000;
+		padding:5px 10px;
+		border-radius:10px;
+	}
+	a:hover{
+		color:$purple;
+	}
+}
+footer{
+	background:#111;
+	padding:40px;
+	font-weight:100;
+	font-size:14px;
+	color:#fff;
+	h3,h4{
+		font-weight:bold;
+	}
+	h3{
+		letter-spacing:2.78px;
+	}
+	h4{
+		letter-spacing:1.88px;
+	}
+	.signup{
+		width:80%;
+		margin:auto;
+		margin-top:10px;
+	}
+	.fa-heart{
+		color:$gold;
+	}
+}
