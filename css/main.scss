@@ -482,3 +482,45 @@ footer{
 #about{
 	padding-top:15%;
 }
+
+$darkPurpleTransparent: rgba(129, 2, 141, 0.6);
+
+#research-1{
+	background:url('../assets/images/research.jpg');
+	background-size: cover;
+	h1{
+		color:#fff;
+	}
+	.overlay{
+		background: $darkPurpleTransparent;
+		padding: 40vh 0 30vh 0;
+	}
+	.container{
+		margin:auto;
+	}
+}
+#research-2{
+	.container{
+		margin:auto;
+		.shit-content{
+			padding: 40px 40px;
+    		margin: 0 auto;
+    		max-width: 800px;
+    		width: 100%;
+    		background: #fff;
+    		position: relative;
+    		top: -80px;
+		}		
+	}
+	b {
+		color:$gold;
+	}
+}
+
+.text-outline{
+	text-shadow:
+    -1px -1px 0 $gold,
+    1px -1px 0 $gold,
+    -1px 1px 0 $gold,
+    1px 1px 0 $gold;  
+}
