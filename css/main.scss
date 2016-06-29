@@ -17,19 +17,19 @@ $desktop:1199px;
 }
 
 @font-face {
-    font-family: 'Bebas';
-    src: url('../assets/fonts/bebasneue_regular-webfont.woff2') format('woff2'),
-         url('../assets/fonts/bebasneue_regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'Bebas';
+	src: url('../assets/fonts/bebasneue_regular-webfont.woff2') format('woff2'),
+	url('../assets/fonts/bebasneue_regular-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
 }
 
 @font-face {
-    font-family: 'Bebas';
-    src: url('../assets/fonts/bebasneue_bold-webfont.woff2') format('woff2'),
-         url('../assets/fonts/bebasneue_bold-webfont.woff') format('woff');
-    font-style: normal;
-    font-weight:bold;
+	font-family: 'Bebas';
+	src: url('../assets/fonts/bebasneue_bold-webfont.woff2') format('woff2'),
+	url('../assets/fonts/bebasneue_bold-webfont.woff') format('woff');
+	font-style: normal;
+	font-weight:bold;
 
 }
 
@@ -361,7 +361,7 @@ a.purple:hover{
 	}
 	img:nth-child(3){
 		@media (max-width: $tablet) {
-		margin-top:30px;
+			margin-top:30px;
 		}
 	}
 }
@@ -480,5 +480,142 @@ footer{
 
 //Your CSS Goes here:
 #about{
-	padding-top:15%;
+
+}
+
+#splash_abt{
+	margin-top: 110px;
+	height: 400px;
+	width: auto;
+	/*background:url('../assets/images/splash.jpg');*/
+	background-color: $purple;
+	color: $white;
+	.container{
+		margin:auto;
+	}
+	h1{
+		max-width: 800px;
+		margin: auto;
+		font-weight:normal;
+		font-size:3.8em;
+		@media (max-width: $tablet) {
+			font-size: 2.2em;
+			max-width: 80%;
+		}
+	}
+	.row{
+		margin-top: 160px;
+	}
+
+}
+
+.sub-nav{
+	width: 100%; 
+	height: auto; 
+	background: white;
+	vertical-align: middle;
+	text-align: center;
+	a{
+		text-decoration: none;
+		color: $black;
+	}
+	.line{
+		padding-top: 10px;
+		padding-bottom: 10px;
+		padding-left: 15px;
+		padding-right: 15px;
+		color: $gold;
+		transform: translateZ(0);
+		backface-visibility: hidden;
+		position: relative;
+		transition-property: color;
+		transition-duration: 0.3s;
+	}
+
+	.line:before{
+		content: "";
+		position: absolute;
+		z-index: -1;
+		top: 95%;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: $gold;
+		transform: scaleX(0);
+		transform-origin: 0 50%;
+		transition-property: transform;
+		transition-duration: 0.3s;
+		transition-timing-function: ease-out;
+	}
+
+	.line:hover, .line:focus, .line:active {
+
+	}
+	.line:hover:before, .line:focus:before, .line:active:before {
+		transform: scaleX(1);
+	}
+
+	.line:hover > a{
+		color: $gold;
+	}
+	.sub_navbar{
+		padding-top: 20px;
+		padding-bottom: 20px;
+		margin: 0 auto;
+		position: relative;
+		font-size: 1.4em;
+		.line{
+			display: inline-block;
+			@media (max-width: $tablet) {
+				display:block;
+			}
+		}
+	}
+
+}
+
+.mission {
+	.row{
+		width: 80%;
+		margin: auto;
+		position: relative;
+	}
+}
+
+.vision_text{
+	width: 600px;
+	@media(max-width: $tablet){
+		text-align: center;
+		width: auto;
+		margin: 0 auto;
+		position: relative;	
+		padding-left: 5%;
+		padding-right: 5%;	
+	}
+}
+
+.impact{
+	.row{
+		width: 80%;
+		margin: auto;
+		position: relative;
+	}
+	
+	.graphic{
+		height: 110px;
+		background: #d3d3d3;
+	}
+}
+
+.president{
+	background: $purple;
+	color: white;
+
+	.row{
+		width: 80%;
+		margin: auto;
+		position: relative;
+		text-align: left;
+		font-size: 1em;
+	}
 }
