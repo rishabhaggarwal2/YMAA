@@ -661,3 +661,98 @@ $darkPurpleTransparent: rgba(129, 2, 141, 0.6);
 		font-size: 1em;
 	}
 }
+
+.board{
+	.member{
+		display: inline-block;
+		margin-left: 20px;
+		margin-right: 20px;
+		position: relative;
+		-webkit-transition: all .2s ease;
+		overflow: hidden;
+		width: 200px;
+		img{
+			width: 200px;
+			height: 200px;
+		}
+		.name{
+			margin-top: 10px;
+			font-weight: bold;
+		}
+		.post{
+			margin-top: -10px;
+			font-size: .8em;
+			font-style: italic;
+		}
+
+
+	}
+	.icon{
+			width: 40px;
+			height: 40px;
+			position: absolute;
+			top:57%;
+			left: 100%;
+			color: $white;
+			-webkit-transition: all .2s ease;
+			opacity: 0;
+		}
+	.member:hover .icon{
+		opacity: 1;
+		left: 70%;
+	}
+}
+
+.connected{
+	background: #e8e4e4;
+	.news{
+		vertical-align: top;
+		display: inline-block;
+		margin-left: 20px;
+		margin-right: 20px;
+		position: relative;
+		-webkit-transition: all .2s ease;
+		width: 200px;
+		overflow: hidden;
+		text-align: left;
+		img{
+			width: 200px;
+			height: 200px;
+		}
+		.name{
+			margin-top: 10px;
+			font-weight: bold;
+		}
+		.post{
+			margin-top: -10px;
+			font-size: .8em;
+			font-weight: lighter;
+		}
+		
+
+				
+	}
+	.line{
+		width: 25px;
+		height: 3px;
+		position: absolute;
+		margin-top: 10px;
+		bottom: 0%;
+		left: 0%;
+		background: $black;
+	}
+	.icon{
+			width: 40px;
+			height: 40px;
+			position: absolute;
+			top:57%;
+			left: 100%;
+			color: $white;
+			-webkit-transition: all .2s ease;
+			opacity: 0;
+		}
+	.news:hover .icon{
+		opacity: 1;
+		left: 70%;
+	}
+}
