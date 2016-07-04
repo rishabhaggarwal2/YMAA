@@ -726,12 +726,22 @@ footer .fa-heart {
   color: white;
 }
 
+.president .message p {
+  padding-top: 20px;
+}
+
 .president .row {
   width: 80%;
   margin: auto;
   position: relative;
   text-align: left;
   font-size: 1em;
+}
+
+.president .quote {
+  color: #000;
+  border-left: solid #000 5px;
+  padding-left: 20px;
 }
 
 .board .member {

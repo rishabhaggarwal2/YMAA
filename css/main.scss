@@ -652,13 +652,24 @@ $darkPurpleTransparent: rgba(129, 2, 141, 0.6);
 .president{
 	background: $purple;
 	color: white;
-
+	.message{
+		p{
+			padding-top: 20px;
+			
+		}
+	}
 	.row{
 		width: 80%;
 		margin: auto;
 		position: relative;
 		text-align: left;
 		font-size: 1em;
+	}
+
+	.quote{
+		color: $black;
+		border-left: solid $black 5px;
+		padding-left: 20px;
 	}
 }
 
