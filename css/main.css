@@ -546,10 +546,6 @@ footer .fa-heart {
   color: #eaad25;
 }
 
-#about {
-  padding-top: 15%;
-}
-
 #research-1 {
   background: url("../assets/images/research.jpg");
   background-size: cover;
@@ -721,6 +717,65 @@ footer .fa-heart {
   background: #d3d3d3;
 }
 
+.impact .graphic:before {
+  content: '';
+  background: url("../assets/images/money.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 180px;
+  height: 300px;
+  position: absolute;
+  top: -70px;
+  left: 10%;
+}
+
+@media (max-width: 767px) {
+  .impact .graphic:before {
+    margin-left: 0;
+    display: none;
+  }
+}
+
+.impact .legend {
+  overflow-x: hidden;
+  margin-left: 300px;
+}
+
+@media (max-width: 767px) {
+  .impact .legend {
+    margin-left: 10px;
+  }
+}
+
+.impact .circ {
+  position: relative;
+  vertical-align: middle;
+  float: left;
+  width: 15px;
+  height: 15px;
+  border-radius: 10px;
+  margin-left: 20px;
+}
+
+.impact #c1 {
+  background: #662d91;
+}
+
+.impact #c2 {
+  background: #440e62;
+}
+
+.impact #c3 {
+  background: #32004b;
+}
+
+.impact .key {
+  position: relative;
+  float: left;
+  margin-top: -5px;
+  margin-left: 10px;
+}
+
 .president {
   background: #81028d;
   color: white;
@@ -745,6 +800,7 @@ footer .fa-heart {
 }
 
 .board .member {
+  vertical-align: top;
   display: inline-block;
   margin-left: 20px;
   margin-right: 20px;

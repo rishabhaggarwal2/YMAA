@@ -480,7 +480,7 @@ footer{
 
 //Your CSS Goes here:
 #about{
-	padding-top:15%;
+	
 }
 
 $darkPurpleTransparent: rgba(129, 2, 141, 0.6);
@@ -504,12 +504,12 @@ $darkPurpleTransparent: rgba(129, 2, 141, 0.6);
 		margin:auto;
 		.shit-content{
 			padding: 40px 40px;
-    		margin: 0 auto;
-    		max-width: 800px;
-    		width: 100%;
-    		background: #fff;
-    		position: relative;
-    		top: -80px;
+			margin: 0 auto;
+			max-width: 800px;
+			width: 100%;
+			background: #fff;
+			position: relative;
+			top: -80px;
 		}		
 	}
 	b {
@@ -519,10 +519,10 @@ $darkPurpleTransparent: rgba(129, 2, 141, 0.6);
 
 .text-outline{
 	text-shadow:
-    -1px -1px 0 $gold,
-    1px -1px 0 $gold,
-    -1px 1px 0 $gold,
-    1px 1px 0 $gold;  
+	-1px -1px 0 $gold,
+	1px -1px 0 $gold,
+	-1px 1px 0 $gold,
+	1px 1px 0 $gold;  
 }
 
 #splash_abt{
@@ -647,6 +647,53 @@ $darkPurpleTransparent: rgba(129, 2, 141, 0.6);
 		height: 110px;
 		background: #d3d3d3;
 	}
+	.graphic:before{
+		content:'';
+		background:url('../assets/images/money.png');
+		background-size:contain;
+		background-repeat: no-repeat;
+		width: 180px;
+		height: 300px;
+		position: absolute;
+		top: -70px;
+		left: 10%;
+		@media (max-width: $tablet) {
+					margin-left:0;
+					display: none;
+				}
+	}
+
+	.legend{
+		overflow-x: hidden;
+		margin-left:300px;
+		@media (max-width: $tablet) {
+					margin-left:10px;
+				}
+	}
+	.circ{
+		position: relative;
+		vertical-align: middle;
+		float: left;
+		width: 15px;
+		height: 15px;
+		border-radius: 10px;
+		margin-left: 20px;
+	}
+	#c1{
+		background: #662d91;
+	}
+	#c2{
+		background: #440e62;
+	}
+	#c3{
+		background: #32004b;
+	}
+	.key{
+		position: relative;
+		float: left;
+		margin-top: -5px;
+		margin-left: 10px;
+	}
 }
 
 .president{
@@ -655,7 +702,7 @@ $darkPurpleTransparent: rgba(129, 2, 141, 0.6);
 	.message{
 		p{
 			padding-top: 20px;
-			
+
 		}
 	}
 	.row{
@@ -675,6 +722,7 @@ $darkPurpleTransparent: rgba(129, 2, 141, 0.6);
 
 .board{
 	.member{
+		vertical-align: top;
 		display: inline-block;
 		margin-left: 20px;
 		margin-right: 20px;
@@ -699,15 +747,15 @@ $darkPurpleTransparent: rgba(129, 2, 141, 0.6);
 
 	}
 	.icon{
-			width: 40px;
-			height: 40px;
-			position: absolute;
-			top:57%;
-			left: 100%;
-			color: $white;
-			-webkit-transition: all .2s ease;
-			opacity: 0;
-		}
+		width: 40px;
+		height: 40px;
+		position: absolute;
+		top:57%;
+		left: 100%;
+		color: $white;
+		-webkit-transition: all .2s ease;
+		opacity: 0;
+	}
 	.member:hover .icon{
 		opacity: 1;
 		left: 70%;
@@ -741,7 +789,7 @@ $darkPurpleTransparent: rgba(129, 2, 141, 0.6);
 		}
 		
 
-				
+
 	}
 	.line{
 		width: 25px;
@@ -753,15 +801,15 @@ $darkPurpleTransparent: rgba(129, 2, 141, 0.6);
 		background: $black;
 	}
 	.icon{
-			width: 40px;
-			height: 40px;
-			position: absolute;
-			top:57%;
-			left: 100%;
-			color: $white;
-			-webkit-transition: all .2s ease;
-			opacity: 0;
-		}
+		width: 40px;
+		height: 40px;
+		position: absolute;
+		top:57%;
+		left: 100%;
+		color: $white;
+		-webkit-transition: all .2s ease;
+		opacity: 0;
+	}
 	.news:hover .icon{
 		opacity: 1;
 		left: 70%;
