@@ -4,19 +4,13 @@ const express = require('express')
 let router = express.Router()
 const config = require('../config')
 
-// router.get('/', function (req, res){
-//   res.render('index');
-// });
+// Controllers
 
-// router.get('/:page_name', function (req, res) {
-//   var pageName = req.params.page_name;
-//   res.render('/' + pageName);
-// });
+const universitiesController = require('./controllers/universitiesController')
+const paymentsController = require('./controllers/paymentsController')
 
-// var applicationController = require('./controllers/applicationController');
-// var donateController = require('./controller/donateController');
-
-// router.post('/apply', applicationController.submitForm);
-// router.post('/donate', applicationController.donate);
+router.get('/:school_name', universitiesController.getSchoolData)
+router.post('/addSchool', universitiesController.addSchool)
+router.post('/donate', paymentsController.donate)
 
 module.exports = router
