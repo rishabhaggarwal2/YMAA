@@ -62,7 +62,11 @@ module.exports = {
         school[key] = updateData[key]
       })
 
-      res.status(200).send('School update: SUCCESS')
+      school.save().then((doc) => {
+        res.status(200).send('School update: SUCCESS')
+      }, (err) => {
+        res.status(401).send('School update: ERROR', err)
+      })
     }, (err) => {
       res.status(401).send('School not found', err)
     })
