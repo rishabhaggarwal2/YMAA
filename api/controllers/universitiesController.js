@@ -1,3 +1,4 @@
+const _ = require('lodash')
 const School = require('../models/Schools')
 
 // For simplicities sake, resolve all Promises here and send back data if needed
@@ -7,9 +8,9 @@ module.exports = {
     const schoolName = req.params.school_name
     School.find({name: schoolName}, (doc) => {
       console.log('School Doc', doc)
-      res.send(doc)
+      res.status(200).send(doc)
     }, (err) => {
-      res.send('School not available.')
+      res.status(401).send('School not available.')
     })
   },
   saveSchool: (req, res) => {
@@ -23,12 +24,12 @@ module.exports = {
     if (parameters.team) schoo.team = parameters.team
 
     school.save().then((doc) => {
-      res.send('Save School: SUCCESS')
+      res.status(200).send('Save School: SUCCESS')
     }, (err) => {
-      res.send('Save School: ERROR')
+      res.status(401).send('Save School: ERROR')
     })
   },
   updateSchool: (req, res) => {
-
+    // update based on available parameters
   }
 }
