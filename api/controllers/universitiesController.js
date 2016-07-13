@@ -1,7 +1,7 @@
 const _ = require('lodash')
 const School = require('../models/Schools')
 const ListOfSchools = require('../models/ListOfSchools')
-
+const AWS = require('aws-sdk')
 // For simplicities sake, resolve all Promises here and send back data if needed
 
 module.exports = {
@@ -48,6 +48,30 @@ module.exports = {
       }
     }, (errors) => {
       res.status(401).send('Something did not save', errors)
+    })
+  },
+  uploadProfilePicture: (req, res) => {
+    AWS.config.update({accessKeyId: config.AWS_ACCESS_KEY, secretAccessKey: config.AWS_SECRET_KEY})
+    const ymaa_bucket = new AWS.S3({params: {Bucket: config.S3_BUCKET}})
+    const options = {
+      Bucket: S3_BUCKET,
+      Key: req.query.name,
+      ContentType: req.query.type,
+      ACL: 'public-read'
+    }
+
+    ymaa_bucket.getSignedUrl('putObject', options, function(err, data){
+      if(err){
+        console.log("Upload ERROR:", err)
+      }
+      else{
+        const return_data = {
+          signed_request: data,
+          url: 'https://' + S3_BUCKET + '.s3.amazonaws.com/' + req.query.name
+        }
+        res.write(JSON.stringify(return_data))
+        res.end()
+      }
     })
   },
   updateSchool: (req, res) => {

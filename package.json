@@ -8,6 +8,7 @@
     "start": "node server.js"
   },
   "dependencies": {
+    "aws-sdk": "latest",
     "body-parser": "latest",
     "express": "latest",
     "lodash": "latest",
