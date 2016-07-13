@@ -1,0 +1,27 @@
+{
+  "name": "ymaa",
+  "version": "1.0.0",
+  "description": "YMAA SPA Angular Website",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm test",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "body-parser": "latest",
+    "express": "latest",
+    "mongoose": "latest",
+    "multer": "1.1.0",
+    "path": "latest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rishabhaggarwal2/YMAA.git"
+  },
+  "author": "Creative Labs UCLA",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rishabhaggarwal2/YMAA/issues"
+  },
+  "homepage": "https://github.com/rishabhaggarwal2/YMAA#readme"
+}
