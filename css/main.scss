@@ -46,12 +46,13 @@ body,html{
 }
 
 h1, h2, h3, h4, h5, h6, a{
-	font-family:Bebas;
+	font-family:Bebas, Bebas Neue;
+	// font-family:Bebas Neue;
 }
 
 a.sexy{
 	letter-spacing: 2.78px;
-	border-radius: 10px;
+	border-radius: 4px;
 	padding: 10px 40px;
 	border:1px solid $white;
 	text-decoration: none;
@@ -62,7 +63,7 @@ a.sexy{
 
 }
 a.sexy.highlight{
-	border:1px solid $gold;
+	border:1px solid $purple;
 	background:$goldTransparent;
 }
 a.sexy:hover{
@@ -88,20 +89,20 @@ a.purple:hover{
 	}
 	input{
 		min-width: 50%;
-		border-radius:10px 0px 0px 10px;
+		border-radius:2px 0px 0px 2px;
 		appearance:none;
 		-webkit-appearance:none;
 		outline: none;
-		border:1px solid $gold;
+		border:1px solid $purple;
 		background:transparent;
-		padding:5px 10px;
-		font-size:14px;
+		padding:8px 12px;
+		font-size:16px;
 		@media (max-width: $tablet) {
 			display:block;
 			margin: auto !important;
 			margin-bottom:0px;
 			width:80%;
-			border-radius:10px 10px 0 0;
+			border-radius:2px 2px 0 0;
 			padding:10px 20px;
 		}
 	}	
@@ -109,22 +110,27 @@ a.purple:hover{
 		border-top:1px solid $gold;
 		border-right:1px solid $gold;
 		border-bottom:1px solid $gold;
-		border-radius:0px 10px 10px 0px;
-		background:$goldTransparent;
+		border-radius:0px 2px 2px 0px;
+		background:$purpleTransparent;
 		text-decoration:none;
 		color:$white;
-		border-color: $gold;
-		padding:7px 20px;
+		border-color: $purple;
+		padding:10px 20px;
 		margin-left:0 !important;
 		margin-right:0 !important;
 		letter-spacing:2.78px;
+		font-size:18px;
 		@media (max-width: $tablet) {
 			display:block;
 			margin: auto !important;
 			margin-bottom:0px;
 			width:80%;
-			border-radius:0px 0px 10px 10px;
+			border-radius:0px 0px 2px 2px;
 		}
+	}
+	a:hover{
+		background:$purple;
+		border-color:$purple;
 	}
 }
 .mobileOnly{
@@ -142,14 +148,19 @@ a.purple:hover{
 #splash{
 	background:url('../assets/images/splash.jpg');
 	background-size: cover;
+	font-size:18px;
 	color: $white;
+	@include transition(0.5s);
+	height:auto;
+	box-shadow: 0px 0px 40px #eee;
 	.overlay{
 		background: rgba(33,33,33,0.96); /* Old browsers */
-		background: -moz-linear-gradient(top, rgba(33,33,33,0.96) 0%, rgba(0,0,0,0.96) 100%); /* FF3.6-15 */
-		background: -webkit-linear-gradient(top, rgba(33,33,33,0.96) 0%,rgba(0,0,0,0.96) 100%); /* Chrome10-25,Safari5.1-6 */
-		background: linear-gradient(to bottom, rgba(33,33,33,0.96) 0%,rgba(0,0,0,0.96) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-		padding-top: 15%;
-		padding-bottom: 10%;
+		background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.96) 0%, rgba(30, 19, 33, 0.99) 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.96) 0%, rgba(30, 19, 33, 0.99) 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom, rgba(0, 0, 0, 0.96) 0%, rgba(30, 19, 33, 0.99) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		padding-top: 12%;
+		overflow:hidden;
+		// padding-bottom: 10%;
 	}
 	*{
 		margin:0;
@@ -162,9 +173,13 @@ a.purple:hover{
 		margin: auto;
 		font-weight:normal;
 		font-size:3.8em;
+		@include transition(1s);
 		@media (max-width: $tablet) {
 			font-size: 2.2em;
 			max-width: 80%;
+			height:200px;
+			display:flex;
+			flex-direction:column-reverse;
 		}
 	}
 	.row{
@@ -174,8 +189,19 @@ a.purple:hover{
 		margin-right: 10px;
 		margin-left: 10px;
 	}
+	a.sexy.highlight{
+		border:1px solid $purple;
+		background:$purpleTransparent;
+	}
+	a.sexy:hover{
+		background:$purple;
+		border-color:$purple;
+	}
+	p{
+		font-style:oblique;
+	}
 	.buttons, .signup{
-		margin-top:30px;
+		margin-top:42px;
 
 		a{
 			@media (max-width: $tablet) {
@@ -188,6 +214,42 @@ a.purple:hover{
 	}
 	.signup{
 
+	}
+
+	.splashImpact{
+		margin-top:9%;
+		background:#fff;
+		color:#111;
+		border-radius:2px 2px 0px 0px;
+		box-shadow: 0px 0px 20px #000;
+
+		.stats{
+			padding:20px;
+			.number{
+				letter-spacing:0.2;
+				color:$purple;
+			}
+			span{
+				font-size:12px;
+				padding-left:4px;
+			}
+			.description{
+				font-size: 14px;
+				text-transform: uppercase;
+				font-style:normal;
+				font-weight: 600;
+				letter-spacing: 0.07em;
+				margin-top: 7px;
+				i.fa{
+					font-size: 22px;
+				    vertical-align: middle;
+				    margin-right: 5px;
+				    @media (max-width: $tablet) {
+				    	display:none;
+				    }
+				}
+			}
+		}
 	}
 }
 
@@ -348,6 +410,8 @@ a.purple:hover{
 
 #logoQuilt{
 	background:#eee;
+	margin-top:40px;
+	margin-bottom:20px;
 
 	img{
 		height:40px;
@@ -424,24 +488,25 @@ nav{
 		@media (max-width: $desktop) {
 			display:none;
 		}
-	}
-	a{
-		margin-top:40px;
-		display:inline-block;
-		margin-left:20px;
-		color:#fff;
-		letter-spacing:1px;
-		text-decoration:none !important;
 
-	}
-	a.hot{
-		background:#fff;
-		color:#000;
-		padding:5px 10px;
-		border-radius:10px;
-	}
-	a:hover{
-		color:$purple;
+		a{
+			margin-top:40px;
+			display:inline-block;
+			margin-left:20px;
+			color:#fff;
+			letter-spacing:1px;
+			text-decoration:none !important;
+
+		}
+		a.hot{
+			background:#fff;
+			color:#000;
+			padding:5px 10px;
+			border-radius:2px;
+		}
+		a:hover{
+			color:$purple;
+		}
 	}
 }
 
@@ -453,7 +518,9 @@ nav.whiteNav{
 	}
 }
 footer{
-	background:#111;
+    background: -webkit-linear-gradient(rgba(0,0,0,0.98), rgba(0,0,0,0.96)),#6D6D6D url(https://images.unsplash.com/photo-1462041866295-e4af004a32ef?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=96d91bef24addfacf85c6770bf41d760) no-repeat center center;
+    background: linear-gradient(rgba(0,0,0,0.98), rgba(0,0,0,0.96)),#6D6D6D url(https://images.unsplash.com/photo-1462041866295-e4af004a32ef?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=96d91bef24addfacf85c6770bf41d760) no-repeat center center;
+    background-size:cover;
 	padding:40px;
 	font-weight:100;
 	font-size:14px;
@@ -467,23 +534,36 @@ footer{
 	h4{
 		letter-spacing:1.88px;
 	}
+	.footerLinks{
+		margin-top:40px;
+		@media (max-width: $tablet) {
+			margin-top:0;
+		}
+		a{
+			display:block;
+			color:#fff;
+			font-size: 16px;
+			line-height:2.5;
+		}
+	}
+	i.fa{
+		margin-right:10px;
+	}
 	.signup{
-		width:80%;
+		width:100%;
 		margin:auto;
 		margin-top:10px;
+		input{
+			min-width:60%;
+		}
 	}
-	.fa-heart{
+	i.fa.fa-heart{
 		color:$gold;
+		margin-right:0px;
 	}
 }
 
-
-//Your CSS Goes here:
-#about{
-	
-}
-
-$darkPurpleTransparent: rgba(129, 2, 141, 0.6);
+$darkPurpleTransparent: rgba(129, 2, 141, 0.93);
 
 #research-1{
 	background:url('../assets/images/research.jpg');
@@ -492,7 +572,9 @@ $darkPurpleTransparent: rgba(129, 2, 141, 0.6);
 		color:#fff;
 	}
 	.overlay{
-		background: $darkPurpleTransparent;
+		background: $darkPurpleTransparent; /* fallback for old browsers */
+		//background: -webkit-linear-gradient(to top, rgba(170, 7, 107, 0.87), rgb(97, 4, 95)); /* Chrome 10-25, Safari 5.1-6 */
+		//background: linear-gradient(to top, rgba(170, 7, 107, 0.87), rgb(97, 4, 95)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 		padding: 40vh 0 30vh 0;
 	}
 	.container{
@@ -503,17 +585,19 @@ $darkPurpleTransparent: rgba(129, 2, 141, 0.6);
 	.container{
 		margin:auto;
 		.shit-content{
-			padding: 40px 40px;
+			padding: 30px 40px;
 			margin: 0 auto;
 			max-width: 800px;
 			width: 100%;
 			background: #fff;
 			position: relative;
 			top: -80px;
+			line-height:1.8;
 		}		
 	}
 	b {
 		color:$gold;
+		font-weight:300;
 	}
 }
 
