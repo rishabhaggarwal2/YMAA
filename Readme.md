@@ -9,3 +9,7 @@ YMAA SPA Angular Website
 
 #angular
 -make new partials for each subpage and add in main.js for routing
+
+#Backend work
+-Whoever wants to contribute to the backend needs to `git pull` then `npm install` 
+-Api currently includes payment/basic crud operations (will continue to update)
