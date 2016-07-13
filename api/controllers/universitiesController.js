@@ -56,9 +56,12 @@ module.exports = {
     const schoolName = req.body.name
     School.find({name: schoolName}, (schoolDoc) => {
       const school = schoolDoc
-      _.mapKeys(updateData, (value, key) => {
-        school[key] = value
+      const keys = _.keys(updateData)
+
+      keys.forEach((key) => {
+        school[key] = updateData[key]
       })
+
       res.status(200).send('School update: SUCCESS')
     }, (err) => {
       res.status(401).send('School not found', err)
