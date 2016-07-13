@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 /**
- * Schema for Event Leads + setters and middleware
+ * Schema for Schools
  *
  * Contains the following fields:
  * - Name
