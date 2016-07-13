@@ -8,7 +8,8 @@ const config = require('./config')
 
 const app = new express()
 const routes = require('./api/routes')
-
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 app.set('port', (process.env.PORT || 8000))
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*')

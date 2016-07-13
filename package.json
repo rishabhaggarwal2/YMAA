@@ -12,7 +12,8 @@
     "express": "latest",
     "mongoose": "latest",
     "multer": "1.1.0",
-    "path": "latest"
+    "path": "latest",
+    "stripe": "latest"
   },
   "repository": {
     "type": "git",
