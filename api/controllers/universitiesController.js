@@ -11,11 +11,11 @@ module.exports = {
       console.log('School Doc', doc)
       res.status(200).send(doc)
     }, (err) => {
-      res.status(401).send('School not available.')
+      res.status(401).send('School not available.', err)
     })
   },
   saveSchool: (req, res) => {
-    const parameters = req.body
+    const parameters = req.body.data
     const school = new School()
     const listEntry = new ListOfSchools()
     if (parameters.name) {
@@ -47,10 +47,21 @@ module.exports = {
         res.status(401).send('Save listEntry: ERROR')
       }
     }, (errors) => {
-      res.status(401).send('Something did not save')
+      res.status(401).send('Something did not save', errors)
     })
   },
   updateSchool: (req, res) => {
     // update based on available parameters
+    const updateData = req.body.updateData
+    const schoolName = req.body.name
+    School.find({name: schoolName}, (schoolDoc) => {
+      const school = schoolDoc
+      _.mapKeys(updateData, (value, key) => {
+        school[key] = value
+      })
+      res.status(200).send('School update: SUCCESS')
+    }, (err) => {
+      res.status(401).send('School not found', err)
+    })
   }
 }
