@@ -15,7 +15,8 @@
     "mongoose": "latest",
     "multer": "1.1.0",
     "path": "latest",
-    "stripe": "latest"
+    "stripe": "latest",
+    "validator": "latest"
   },
   "repository": {
     "type": "git",

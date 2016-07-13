@@ -2,6 +2,7 @@ const _ = require('lodash')
 const School = require('../models/Schools')
 const ListOfSchools = require('../models/ListOfSchools')
 const AWS = require('aws-sdk')
+const validator = require('validator')
 // For simplicities sake, resolve all Promises here and send back data if needed
 
 module.exports = {
