@@ -52,6 +52,5 @@ module.exports = {
   },
   updateSchool: (req, res) => {
     // update based on available parameters
-
   }
 }

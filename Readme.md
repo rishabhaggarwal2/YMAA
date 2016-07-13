@@ -1,4 +1,4 @@
-#YMAA
+YMAA
 YMAA SPA Angular Website
 
 #SCSS
@@ -13,3 +13,4 @@ YMAA SPA Angular Website
 #Backend work
 -Whoever wants to contribute to the backend needs to `git pull` then `npm install` 
 -Api currently includes payment/basic crud operations (will continue to update)
+-Run `npm start` and vist localhost:8000 
