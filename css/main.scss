@@ -46,8 +46,8 @@ body,html{
 }
 
 h1, h2, h3, h4, h5, h6, a{
-	// font-family:Bebas, Bebas Neue;
-	font-family:Bebas Neue;
+	font-family:Bebas, Bebas Neue;
+	// font-family:Bebas Neue;
 }
 
 a.sexy{
@@ -557,9 +557,9 @@ footer{
 			min-width:60%;
 		}
 	}
-	.fa-heart{
+	i.fa.fa-heart{
 		color:$gold;
-		margin-right:0;
+		margin-right:0px;
 	}
 }
 
