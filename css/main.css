@@ -310,6 +310,38 @@ a.purple:hover {
   color: #81028d;
 }
 
+.shadow-border {
+  box-shadow: 0px 3px 20px #888888;
+}
+
+.page-splash .overlay {
+  background: rgba(129, 2, 141, 0.6);
+  padding: 33vh 0 33vh 0;
+}
+
+.page-splash .container {
+  margin: auto;
+}
+
+.page-splash h1 {
+  color: #fff;
+  max-width: 800px;
+  margin: auto;
+  font-weight: bold;
+  font-size: 4em;
+}
+
+@media (max-width: 767px) {
+  .page-splash h1 {
+    font-size: 2.2em;
+    max-width: 80%;
+  }
+}
+
+.page-splash .row {
+  margin-top: 160px;
+}
+
 #why .whyPoints {
   margin-top: 40px;
 }
@@ -655,80 +687,6 @@ footer i.fa.fa-heart {
   margin-right: 0px;
 }
 
-#research-1 {
-  background: url("../assets/images/research.jpg");
-  background-size: cover;
-}
-
-#research-1 h1 {
-  color: #fff;
-}
-
-#research-1 .overlay {
-  background: rgba(129, 2, 141, 0.93);
-  /* fallback for old browsers */
-  padding: 40vh 0 30vh 0;
-}
-
-#research-1 .container {
-  margin: auto;
-}
-
-#research-2 .container {
-  margin: auto;
-}
-
-#research-2 .container .shit-content {
-  padding: 30px 40px;
-  margin: 0 auto;
-  max-width: 800px;
-  width: 100%;
-  background: #fff;
-  position: relative;
-  top: -80px;
-  line-height: 1.8;
-}
-
-#research-2 b {
-  color: #eaad25;
-  font-weight: 300;
-}
-
-.text-outline {
-  text-shadow: -1px -1px 0 #eaad25, 1px -1px 0 #eaad25, -1px 1px 0 #eaad25, 1px 1px 0 #eaad25;
-}
-
-#splash_abt {
-  margin-top: 110px;
-  height: 400px;
-  width: auto;
-  /*background:url('../assets/images/splash.jpg');*/
-  background-color: #81028d;
-  color: #fff;
-}
-
-#splash_abt .container {
-  margin: auto;
-}
-
-#splash_abt h1 {
-  max-width: 800px;
-  margin: auto;
-  font-weight: normal;
-  font-size: 3.8em;
-}
-
-@media (max-width: 767px) {
-  #splash_abt h1 {
-    font-size: 2.2em;
-    max-width: 80%;
-  }
-}
-
-#splash_abt .row {
-  margin-top: 160px;
-}
-
 .sub-nav {
   width: 100%;
   height: auto;
@@ -1012,7 +970,39 @@ footer i.fa.fa-heart {
   left: 70%;
 }
 
+/* Research Page */
+#research-1 {
+  background: url("../assets/images/research.jpg");
+  background-size: cover;
+}
+
+#research-2 .container {
+  margin: auto;
+}
+
+#research-2 .container .shit-content {
+  padding: 30px 40px;
+  margin: 0 auto;
+  max-width: 800px;
+  width: 100%;
+  background: #fff;
+  position: relative;
+  top: -80px;
+  line-height: 1.8;
+}
+
+#research-2 b {
+  color: #eaad25;
+  font-weight: 300;
+}
+
 /*What is Alzheimer's Page*/
+#splash_abt {
+  background: url("../assets/images/whatis1.jpg");
+  background-size: cover;
+  background-position: center 15%;
+}
+
 .neurons {
   margin-left: 150px;
   margin-right: -10%;
@@ -1022,6 +1012,16 @@ footer i.fa.fa-heart {
 
 .neurons p {
   width: 350px;
+}
+
+.neurons #neuron1 {
+  float: right;
+  width: 400px;
+}
+
+.neurons #neuron2 {
+  width: 300px;
+  float: right;
 }
 
 #alz_stats {

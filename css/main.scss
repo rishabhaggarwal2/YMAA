@@ -5,6 +5,7 @@ $purple: rgba(129, 2, 141, 1);
 $whiteTransparent: rgba(255, 255, 255, 0.4);
 $goldTransparent: rgba(234, 173, 37, 0.6);
 $purpleTransparent: rgba(129, 2, 141, 0.4);
+$darkPurpleTransparent: rgba(129, 2, 141, 0.6);
 $tablet:767px;
 $desktop:1199px;
 
@@ -275,6 +276,33 @@ a.purple:hover{
 	}
 }
 
+.shadow-border{
+	box-shadow: 0px 3px 20px #888888;
+}
+
+.page-splash{
+	.overlay{
+		background: $darkPurpleTransparent;
+		padding: 33vh 0 33vh 0
+	}
+	.container{
+		margin:auto;
+	}
+	h1{
+		color: $white;
+		max-width: 800px;
+		margin: auto;
+		font-weight: bold;
+		font-size:4em;
+		@media (max-width: $tablet) {
+			font-size: 2.2em;
+			max-width: 80%;
+		}
+	}
+	.row{
+		margin-top: 160px;
+	}
+}
 
 #why{
 	.whyPoints{
@@ -563,78 +591,6 @@ footer{
 	}
 }
 
-$darkPurpleTransparent: rgba(129, 2, 141, 0.93);
-
-#research-1{
-	background:url('../assets/images/research.jpg');
-	background-size: cover;
-	h1{
-		color:#fff;
-	}
-	.overlay{
-		background: $darkPurpleTransparent; /* fallback for old browsers */
-		//background: -webkit-linear-gradient(to top, rgba(170, 7, 107, 0.87), rgb(97, 4, 95)); /* Chrome 10-25, Safari 5.1-6 */
-		//background: linear-gradient(to top, rgba(170, 7, 107, 0.87), rgb(97, 4, 95)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-		padding: 40vh 0 30vh 0;
-	}
-	.container{
-		margin:auto;
-	}
-}
-#research-2{
-	.container{
-		margin:auto;
-		.shit-content{
-			padding: 30px 40px;
-			margin: 0 auto;
-			max-width: 800px;
-			width: 100%;
-			background: #fff;
-			position: relative;
-			top: -80px;
-			line-height:1.8;
-		}		
-	}
-	b {
-		color:$gold;
-		font-weight:300;
-	}
-}
-
-.text-outline{
-	text-shadow:
-	-1px -1px 0 $gold,
-	1px -1px 0 $gold,
-	-1px 1px 0 $gold,
-	1px 1px 0 $gold;  
-}
-
-#splash_abt{
-	margin-top: 110px;
-	height: 400px;
-	width: auto;
-	/*background:url('../assets/images/splash.jpg');*/
-	background-color: $purple;
-	color: $white;
-	.container{
-		margin:auto;
-	}
-	h1{
-		max-width: 800px;
-		margin: auto;
-		font-weight:normal;
-		font-size:3.8em;
-		@media (max-width: $tablet) {
-			font-size: 2.2em;
-			max-width: 80%;
-		}
-	}
-	.row{
-		margin-top: 160px;
-	}
-
-}
-
 .sub-nav{
 	width: 100%; 
 	height: auto; 
@@ -871,9 +827,6 @@ $darkPurpleTransparent: rgba(129, 2, 141, 0.93);
 			font-size: .8em;
 			font-weight: lighter;
 		}
-		
-
-
 	}
 	.line{
 		width: 25px;
@@ -900,18 +853,57 @@ $darkPurpleTransparent: rgba(129, 2, 141, 0.93);
 	}
 }
 
+/* Research Page */
+
+#research-1{
+	background:url('../assets/images/research.jpg');
+	background-size: cover;
+}
+
+#research-2{
+	.container{
+		margin:auto;
+		.shit-content{
+			padding: 30px 40px;
+			margin: 0 auto;
+			max-width: 800px;
+			width: 100%;
+			background: #fff;
+			position: relative;
+			top: -80px;
+			line-height:1.8;
+		}		
+	}
+	b {
+		color:$gold;
+		font-weight:300;
+	}
+}
+
 /*What is Alzheimer's Page*/
+
+#splash_abt{
+	background:url('../assets/images/whatis1.jpg');
+	background-size:cover;
+	background-position:center 15%;
+}
 
 .neurons{
 	margin-left: 150px;
 	margin-right: -10%;
 	padding: 60px 80px;
 	background-color: $white;
-
 	p{
 		width: 350px;
 	}
-
+	#neuron1{
+		float: right;
+		width: 400px;
+	}
+	#neuron2{
+		width: 300px;
+		float: right;
+	}
 }
 
 #alz_stats{
