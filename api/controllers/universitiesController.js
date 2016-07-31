@@ -27,7 +27,7 @@ module.exports = {
     if (parameters.fb_link) school.fb_link = parameters.fb_link
     if (parameters.twitter_link) school.twitter_link = parameters.twitter_link
     if (parameters.instagram_link) school.instagram_link = parameters.instagram_link
-    if (parameters.team) schoo.team = parameters.team
+    if (parameters.team) school.team = parameters.team
 
     Promise.all([
       school.save(),
