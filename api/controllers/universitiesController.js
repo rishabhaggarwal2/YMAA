@@ -5,6 +5,8 @@ const AWS = require('aws-sdk')
 const validator = require('validator')
 // For simplicities sake, resolve all Promises here and send back data if needed
 
+//heroku init push
+
 module.exports = {
   getSchoolData: (req, res) => {
     const schoolName = req.params.school_name
