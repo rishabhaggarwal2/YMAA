@@ -10,7 +10,7 @@ const universitiesController = require('./controllers/universitiesController')
 const paymentsController = require('./controllers/paymentsController')
 
 router.get('/', (req, res) => {
-  res.render('home')
+  res.render('index')
 })
 router.get('/school/:school_name', universitiesController.getSchoolData)
 router.post('/save_school', universitiesController.saveSchool)
