@@ -23,11 +23,11 @@
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- Our Website CSS Styles -->
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="../public/css/main.css">
 
-    <script src="ammap/ammap.js" type="text/javascript"></script>
-    <link rel="stylesheet" href="ammap/ammap.css" type="text/css" media="all" />
-    <script src="ammap/usa2High.js" type="text/javascript"></script>
+    <script src="../public/ammap/ammap.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="../public/ammap/ammap.css" type="text/css" media="all" />
+    <script src="../public/ammap/usa2High.js" type="text/javascript"></script>
 
 </head>
 <body ng-app="tutorialWebApp">
@@ -38,7 +38,7 @@
     
     <nav>
         <div class="col-xs-12 col-lg-2">
-            <img src="assets/images/logo.png">
+            <img src="../public/assets/images/logo.png">
         </div>
         <div class="col-xs-0 col-lg-10 links">
             <a href="#/chapters">Chapters</a>
@@ -81,7 +81,7 @@
             <div class="row whyPoints">
                 <div class="col-xs-12 col-lg-8 col-lg-offset-2">
                     <div class="row whyPoint" >
-                        <img src="assets/images/why1.png" class="mobileOnly">
+                        <img src="../public/assets/images/why1.png" class="mobileOnly">
                         <p>Of the top 10 <b>leading causes of death</b>, Alzheimer’s is the 6th and the only one that <b>cannot be slowed, prevented or cured.</b></p>
                     </div>
 
@@ -90,20 +90,20 @@
                         <br>
                         <span class="purple"><span class="circle"></span> = 2015</span>
                         <span class="light"><span class="circle"></span> = 2016</span>
-                        <img src="assets/images/why2.png" class="mobileOnly">
+                        <img src="../public/assets/images/why2.png" class="mobileOnly">
                         </p>
                     </div>
 
 
                     <div class="row whyPoint" >
-                        <img src="assets/images/why3.png" class="mobileOnly">
+                        <img src="../public/assets/images/why3.png" class="mobileOnly">
                         <p>More than 5 million people are living with Alzheimer's Disease in the U.S. This number is predicted to reach up to <b>16 million by 2050.</b></p>
                     </div>
 
                     <div class="row whyPoint" >
                         <p>Nearly <b>two thirds</b> of Americans with Alzheimers are <b>women</b>.
                         </p>
-                        <img src="assets/images/why4.png" class="mobileOnly">
+                        <img src="../public/assets/images/why4.png" class="mobileOnly">
                     </div>
 
 
@@ -134,9 +134,9 @@
     <div id="logoQuilt" class="container-fluid generalSection lightSection text-center">
         <div class="container">
             <div class="row">
-                <img src="assets/images/quilt1.png">
-                <img src="assets/images/quilt2.png">
-                <img src="assets/images/quilt3.png">
+                <img src="../public/assets/images/quilt1.png">
+                <img src="../public/assets/images/quilt2.png">
+                <img src="../public/assets/images/quilt3.png">
             </div>
         </div>
     </div>
@@ -214,9 +214,9 @@
         </div>
     </footer>
 <!-- Our Website Content Goes Here -->
-<div ng-include='"templates/header.html"'></div>
+<div ng-include='"../public/templates/header.html"'></div>
 <div ng-view></div>
-<div ng-include='"templates/footer.html"'></div>
+<div ng-include='"../public/templates/footer.html"'></div>
 
 <!-- Vendor: Javascripts -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -226,7 +226,7 @@
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular-route.min.js"></script> -->
 
 <!-- Our Website Javascripts -->
-<script src="js/main.js"></script>
+<script src="../public/js/main.js"></script>
 <script type="text/javascript">
    var icon= "M233.292,0c-85.1,0-154.334,69.234-154.334,154.333c0,34.275,21.887,90.155,66.908,170.834 c31.846,57.063,63.168,104.643,64.484,106.64l22.942,34.775l22.941-34.774c1.317-1.998,32.641-49.577,64.483-106.64 c45.023-80.68,66.908-136.559,66.908-170.834C387.625,69.234,318.391,0,233.292,0z M233.292,233.291c-44.182,0-80-35.817-80-80 s35.818-80,80-80c44.182,0,80,35.817,80,80S277.473,233.291,233.292,233.291z";
 

@@ -10,6 +10,7 @@
   "dependencies": {
     "aws-sdk": "latest",
     "body-parser": "latest",
+    "ejs": "2.5.1",
     "express": "latest",
     "lodash": "latest",
     "mongoose": "latest",
