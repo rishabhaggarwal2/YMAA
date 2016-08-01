@@ -11,7 +11,7 @@ var app = angular.module('ymaaSPA', [
 ]);
 
 /**
- * Configure the Routes
+ * Configure the Routes - git push
  */
 app.config(['$routeProvider', function ($routeProvider) {
   $routeProvider
