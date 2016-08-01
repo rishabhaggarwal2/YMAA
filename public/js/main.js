@@ -1,9 +1,4 @@
 /**
- * AngularJS Tutorial 1
- * @author Nick Kaye <nick.c.kaye@gmail.com>
- */
-
-/**
  * Main AngularJS Web Application
  */
 var app = angular.module('ymaaSPA', [
@@ -11,19 +6,19 @@ var app = angular.module('ymaaSPA', [
 ]);
 
 /**
- * Configure the Routes
+ * Configure the Routes - git push
  */
 app.config(['$routeProvider', function ($routeProvider) {
   $routeProvider
     // Home
-    .when("/", {templateUrl: "partials/home.html", controller: "HomeCtrl"})
+    .when("/", {templateUrl: "../partials/home.html", controller: "HomeCtrl"})
     // Pages
-    .when("/about", {templateUrl: "partials/about.html", controller: "PageCtrl"})
-    .when("/research", {templateUrl: "partials/research.html", controller: "PageCtrl"})
-    .when("/alzheimers", {templateUrl: "partials/alzheimers.html", controller: "PageCtrl"})
-    .when("/ucla", {templateUrl: "partials/ucla.html", controller: "ChapterCtrl"})
+    .when("/about", {templateUrl: "../partials/about.html", controller: "PageCtrl"})
+    .when("/research", {templateUrl: "../partials/research.html", controller: "PageCtrl"})
+    .when("/alzheimers", {templateUrl: "../partials/alzheimers.html", controller: "PageCtrl"})
+    .when("/ucla", {templateUrl: "../partials/ucla.html", controller: "ChapterCtrl"})
     // else 404
-    .otherwise("/404", {templateUrl: "partials/404.html", controller: "PageCtrl"});
+    .otherwise("/404", {templateUrl: "../partials/404.html", controller: "PageCtrl"});
 }]);
 
 /**

@@ -8,8 +8,14 @@ const config = require('./config')
 
 const app = new express()
 const routes = require('./api/routes')
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: false }))
+app.set('view engine', 'html')
+app.use(express.static('public'))
+app.use('/public', express.static(path.join(__dirname, '/public')))
+app.set('views', __dirname + '/views')
+app.engine('html', require('ejs').renderFile)
+
 app.set('port', (process.env.PORT || 8000))
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*')
