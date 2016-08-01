@@ -1,0 +1,234 @@
+
+<div id="splash_abt">
+    <div class="overlay cnotainer-fluid">
+        <div class="container text-center">
+            <div class="row">
+                <h1>Creating a future worth remembering</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="sub-nav">
+    <div class="sub_navbar">
+        <div class="line"><a href="#/mission">OUR MISSION</a></div>
+        <div class="line"><a href="#/vision">OUR VISION</a></div>
+        <div class="line"><a href="#/impact">OUR IMPACT</a></div>
+        <div class="line"><a href="#/board">OUR BOARD</a></div>
+        <div class="line"><a href="#/social">STAY CONNECTED</a></div>
+    </div>
+</div>
+<div id="about" class="container-fluid generalSection lightSection text-center">
+    <div class="container mission">
+        <div class="row">
+            <h1>OUR MISSION</h1>
+        </div>
+        <div class="row">
+            <p>
+                The Youth Movement Against Alzheimer's promotes awareness and understanding of Alzheimer’s disease by providing high school and college-age students with opportunities for volunteering, clinical research, and fundraising, with the ultimate goal of spreading compassion and empathy for the elderly.
+            </p>
+        </div>
+    </div>
+</div>
+
+<div id="splash_abt">
+    <div class="overlay cnotainer-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="vision_text">
+                    <h2 style="color: rgba(234, 173, 37, 1);">OUR VISION</h2>
+
+                    <p>We, the Youth Movement Against Alzheimer’s, envision a united effort that bridges together both the youth and elderly in a common goal to combat Alzheimer’s Disease through active fundraising and advocacy in communities nationwide.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid generalSection lightSection text-center">
+    <div class="container impact">
+        <div class="row">
+            <h1>OUR IMPACT</h1>
+        </div>
+        <div class="row graphic">
+            <br>
+            <p>Total Amount Fundraised:</p>
+            <div class="legend">
+                    <div class="circ" id="c1">  
+                    </div><div class="key">2015</div>
+                    <div class="circ" id="c2">  
+                    </div><div class="key">2016</div>
+                    <div class="circ" id="c3">  
+                    </div><div class="key">2017 Goal</div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid generalSection text-center president">
+    <div class="container impact">
+
+        <h1>PRESIDENTS MESSAGE</h1>
+        
+        <br>
+        <div class="row message">
+            <p>
+                "Alzheimer's disease is the only top 10 cause of death without a way to prevent, cure, or even slow its progression." - Alzheimer's Association If this is the case, then why do Cancer, Heart Disease, and HIV all receive 3 to 6 billion dollars of annual funding, while Alzheimer's gets under 500 million? To learn more, I joined Alzheimer's Association's public policy team. After meeting with a few Congress members and attending the association's national policy conference - this reason became more clear.
+            </p>
+
+            <p>
+             As a 20 year old attending the conference, I was very excited to find other young members at their Youth Forum. To my surprise, the Youth Forum was for attendees aged 40 and under, and it had about 50 attendees in a conference of over 1100 members. 
+         </p>
+
+         <p>
+             <b>Youth are not involved in Alzheimer's.</b>
+         </p>
+
+         <p>
+            But of course, why should they be? Is it not a disease that only affects the elderly?
+            True, Alzheimer's generally affects people aged 50 and above, but it can and will affect us one day. It is more than just a disease. It is a huge strain on our national healthcare system.
+            Today, 1 in 5 Medicare and Medicaid dollars goes directly toward Alzheimer's care and that number is estimated to be 1 in 3 as the baby boomer generation comes to age in the next few decades.
+        </p>
+        <div class="row quote">
+            <p><b>"Alzheimer's disease is the only top 10 cause of death without a way to prevent, cure, or even slow its progression."</b></p>
+            &nbsp;<i>- Alzheimer's Association</i>
+        </div>
+        <p>
+            Alzheimer's patients and their extremely stressed caregivers are not going to be the voting population that push our Congress members to fund research - that burden falls to us. The older generation will be the ones affected by the disease, but you and I are going to be the ones forced to find solutions to this tough healthcare situation.
+        </p>
+        <p>
+            We cannot solve everything overnight, but our generation must make a genuine start. We are the Youth Movement Against Alzheimer’s, and we are creating a future worth remembering.
+        </p>
+        <p>
+            With much excitement and warm regards,
+        </p>
+
+        <p>Nihal Satyadev, <br>President</p>
+
+
+
+    </div>
+</div>
+</div>
+
+<div class="container-fluid generalSection lightSection text-center board">
+    <div class="container impact">
+        <div class="row">
+            <h1>NATIONAL YOUTH BOARD</h1>
+        </div>
+        <br>
+        <div class="row">
+
+            <div class="member">
+                <a href="https://www.linkedin.com"><i class="fa fa-linkedin-square fa-2x icon" aria-hidden="true"></i></a>
+                <img src="assets/images/nihal.jpeg">
+                <p class="name">Nihal Satyadev</p>
+                <p class="post">President and Co-Founder</p>
+            </div>
+
+            <div class="member">
+                <a href="https://www.linkedin.com"><i class="fa fa-linkedin-square fa-2x icon" aria-hidden="true"></i></a>
+                <img src="assets/images/jaygopal.jpg">
+                <p class="name">Jay Gopal</p>
+                <p class="post">External Vice President</p>
+            </div>
+
+            <div class="member">
+                <a href="https://www.linkedin.com"><i class="fa fa-linkedin-square fa-2x icon" aria-hidden="true"></i></a>
+                <img src="assets/images/andrew.jpg">
+                <p class="name">Andrew Nguyen</p>
+                <p class="post">Internal Vice President</p>
+            </div>
+
+            <div class="member">
+                <a href="https://www.linkedin.com"><i class="fa fa-linkedin-square fa-2x icon" aria-hidden="true"></i></a>
+                <img src="assets/images/silena.jpg">
+                <p class="name">Silena Palozzola</p>
+                <p class="post">Chief Financial Officer</p>
+            </div>
+
+            <div class="member">
+                <a href="https://www.linkedin.com"><i class="fa fa-linkedin-square fa-2x icon" aria-hidden="true"></i></a>
+                <img src="assets/images/ridhi.jpg">
+                <p class="name">Ridhi Arun</p>
+                <p class="post">Secretary</p>
+            </div>
+
+            <div class="member">
+                <a href="https://www.linkedin.com"><i class="fa fa-linkedin-square fa-2x icon" aria-hidden="true"></i></a>
+                <img src="assets/images/christian.jpg">
+                <p class="name">Christian Corrales</p>
+                <p class="post">Treasurer</p>
+            </div>
+
+            <div class="member">
+                <a href="https://www.linkedin.com"><i class="fa fa-linkedin-square fa-2x icon" aria-hidden="true"></i></a>
+                <img src="assets/images/xenia.jpg">
+                <p class="name">Xenia Levitski</p>
+                <p class="post">Director of Internal Relations</p>
+            </div>
+
+            <div class="member">
+                <a href="https://www.linkedin.com"><i class="fa fa-linkedin-square fa-2x icon" aria-hidden="true"></i></a>
+                <img src="assets/images/misak.jpg">
+                <p class="name">Misak Khachatryan</p>
+                <p class="post">Publicity Director & Head of Media Affairs</p>
+            </div>
+
+            <div class="member">
+                <a href="https://www.linkedin.com"><i class="fa fa-linkedin-square fa-2x icon" aria-hidden="true"></i></a>
+                <img src="assets/images/lana.jpg">
+                <p class="name">Lana Womack</p>
+                <p class="post">Board Intern</p>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid generalSection lightSection text-center connected">
+    <div class="container impact">
+        <div class="row">
+            <h1>LEARN MORE AND STAY CONNECTED</h1>
+        </div>
+        <br>
+        <div class="row">
+            <div class="news">
+                <a href="https://www.linkedin.com"><i class="fa fa-arrow-right fa-2x icon" aria-hidden="true"></i></a>
+                <img src="assets/images/why1.png">
+                <p class="name">Lorem Ipsum dolor sit amet hlak elekj long article title 1</p>
+                <p class="post">July 2016</p>
+                <div class="line"></div>
+            </div>
+            
+            <div class="news">
+                <a href="https://www.linkedin.com"><i class="fa fa-arrow-right fa-2x icon" aria-hidden="true"></i></a>
+                <img src="assets/images/why2.png">
+                <p class="name">Lorem Ipsum dolor sit amet hlak elekj</p>
+                <p class="post">July 2016</p>
+                <div class="line"></div>
+            </div>
+
+            <div class="news">
+                <a href="https://www.linkedin.com"><i class="fa fa-arrow-right fa-2x icon" aria-hidden="true"></i></a>
+                <img src="assets/images/why3.png">
+                <p class="name">Lorem Ipsum dolor sit amet hlak elekj</p>
+                <p class="post">July 2016</p>
+                <div class="line"></div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -21,6 +21,7 @@ app.config(['$routeProvider', function ($routeProvider) {
     .when("/about", {templateUrl: "partials/about.html", controller: "PageCtrl"})
     .when("/research", {templateUrl: "partials/research.html", controller: "PageCtrl"})
     .when("/alzheimers", {templateUrl: "partials/alzheimers.html", controller: "PageCtrl"})
+    .when("/ucla", {templateUrl: "partials/ucla.html", controller: "ChapterCtrl"})
     // else 404
     .otherwise("/404", {templateUrl: "partials/404.html", controller: "PageCtrl"});
 }]);
@@ -70,6 +71,59 @@ app.controller('HomeCtrl', function ($scope/* $scope, $location, $http */) {
  */
 app.controller('PageCtrl', function ($scope/* $scope, $location, $http */) {
   // console.log("Page Controller reporting for duty.");
+  var reset = function(){
+    $scope.message = false;
+    $scope.timeline = false;
+    $scope.youthb = false;
+    $scope.board = false;
+    $scope.advisors = false;
+  };
+
+  $scope.message = true;
+
+  $scope.messageClick = function() {
+    reset();
+    $scope.message = true;
+  };
+
+  $scope.timelineClick = function() {
+    reset();
+    $scope.timeline = true;
+  };
+
+  $scope.ybClick = function() {
+    reset();
+    $scope.youthb = true;
+  };
+
+  $scope.boardClick = function() {
+    reset();
+    $scope.board = true;
+  };
+
+  $scope.advisorsClick = function() {
+    reset();
+    $scope.advisors = true;
+  };
+
+});
+
+/**
+ * Controls the Chapters
+ */
+app.controller('ChapterCtrl', function ($scope/* $scope, $location, $http */) {
+  // console.log("Page Controller reporting for duty.");
+  var sectionScroll;
+  var scrollPosition;
+
+  $(".sub_navbar a").off().one("click", function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    sectionScroll = $(this).attr("data-href");
+    scrollPosition = $(sectionScroll).offset().top + "px";
+    console.log(scrollPosition);
+    $("html, body").animate({ scrollTop: scrollPosition });
+  });
 });
 
 /**
