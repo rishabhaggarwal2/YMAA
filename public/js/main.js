@@ -141,5 +141,42 @@ app.controller('NavCtrl', function ($scope, $location/* $scope, $location, $http
         $scope.nav = false;
     }  
   });
-  
+});
+
+app.factory('Server', function ($http) {
+  var factory = {};
+
+  factory.getSchool = (schoolName, onComplete) => {
+    $http.get('/school/#{schoolName}').then((resp) => {
+      onComplete(null, resp);
+    }, (err) => {
+      onComplete(err, null);
+    });
+  };
+
+  factory.saveSchool = (data, onComplete) => {
+    $http.get('/save_school', {school_info: data}).then((resp) => {
+      onComplete(null, resp);
+    }, (err) => {
+      onComplete(err, null);
+    });
+  };
+
+  factory.uploadProfilePicture = (picture, onComplete) => {
+    $http.post('/upload_profile_picture', {picture: picture}).then((resp) => {
+      onComplete(null, resp);
+    }, (err) => {
+      onComplete(err, null);
+    });
+  };
+
+  factory.donate = (paymentData, onComplete) => {
+    $http.post('/donate', {payment_data: paymentData}).then((resp) => {
+      onComplete(null, resp);
+    }, (err) => {
+      onComplete(err, null);
+    });
+  };
+
+  return factory;
 });
