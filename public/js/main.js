@@ -155,7 +155,7 @@ app.factory('Server', function ($http) {
   };
 
   factory.saveSchool = (data, onComplete) => {
-    $http.get('/save_school', {school_info: data}).then((resp) => {
+    $http.post('/save_school', {school_info: data}).then((resp) => {
       onComplete(null, resp);
     }, (err) => {
       onComplete(err, null);
