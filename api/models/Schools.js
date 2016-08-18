@@ -24,7 +24,8 @@ const Schema = mongoose.Schema
 
 const schoolSchema = new Schema({
   name: {type: String, required: true, index: true},
-  impact: {type: String, required: true},
+  impact: {type: String, required: false},
+  address: {type: String, required: false},
   fb_link: {type: String, required: false},
   twitter_link: {type: String, required: false},
   instagram_link: {type: String, required: false},

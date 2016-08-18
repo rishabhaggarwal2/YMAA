@@ -10,7 +10,8 @@ const validator = require('validator')
 module.exports = {
   getSchoolData: (req, res) => {
     const schoolName = req.params.school_name
-    School.find({name: schoolName}, (doc) => {
+    console.log(schoolName);
+    School.find({name: schoolName}, (err, doc) => {
       console.log('School Doc', doc)
       res.status(200).send(doc)
     }, (err) => {
@@ -18,7 +19,7 @@ module.exports = {
     })
   },
   saveSchool: (req, res) => {
-    const parameters = req.body.data
+    const parameters = req.body.school_info
     const school = new School()
     const listEntry = new ListOfSchools()
     if (parameters.name) {
@@ -28,6 +29,7 @@ module.exports = {
     if (parameters.impact) school.impact = parameters.impact
     if (parameters.fb_link) school.fb_link = parameters.fb_link
     if (parameters.twitter_link) school.twitter_link = parameters.twitter_link
+    if (parameters.address) school.address = parameters.address
     if (parameters.instagram_link) school.instagram_link = parameters.instagram_link
     if (parameters.team) school.team = parameters.team
 

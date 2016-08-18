@@ -16,7 +16,7 @@ app.config(['$routeProvider', function ($routeProvider) {
     .when("/about", {templateUrl: "../partials/about.html", controller: "PageCtrl"})
     .when("/research", {templateUrl: "../partials/research.html", controller: "PageCtrl"})
     .when("/alzheimers", {templateUrl: "../partials/alzheimers.html", controller: "PageCtrl"})
-    .when("/ucla", {templateUrl: "../partials/ucla.html", controller: "ChapterCtrl"})
+    .when("/school/:school_name", {templateUrl: "../partials/ucla.html", controller: "ChapterCtrl"})
     // else 404
     .otherwise("/404", {templateUrl: "../partials/404.html", controller: "PageCtrl"});
 }]);
@@ -64,7 +64,7 @@ app.controller('HomeCtrl', function ($scope/* $scope, $location, $http */) {
 /**
  * Controls all other Pages
  */
-app.controller('PageCtrl', function ($scope/* $scope, $location, $http */) {
+app.controller('PageCtrl', function ($scope, Server /* $scope, $location, $http */) {
   // console.log("Page Controller reporting for duty.");
   var reset = function(){
     $scope.message = false;
@@ -99,17 +99,37 @@ app.controller('PageCtrl', function ($scope/* $scope, $location, $http */) {
   $scope.advisorsClick = function() {
     reset();
     $scope.advisors = true;
+    // Server.saveSchool({
+    //   name: "UCLA",
+    //   impact: "lolol",
+    //   address: "1234 sd sf sd",
+    // }, function(error, resp){
+    //   console.log(error, resp);
+    // });
   };
+
+  
 
 });
 
 /**
  * Controls the Chapters
  */
-app.controller('ChapterCtrl', function ($scope/* $scope, $location, $http */) {
+app.controller('ChapterCtrl', function ($scope, $routeParams, Server/* $scope, $location, $http */) {
   // console.log("Page Controller reporting for duty.");
   var sectionScroll;
   var scrollPosition;
+
+  console.log($routeParams);
+
+  Server.getSchool($routeParams.school_name, function(error, resp){
+    console.log(error, resp);
+  });
+
+  Server.uploadProfilePicture("http://localhost:8000/assets/images/andrew.jpg",
+    function(error, resp){
+      console.log(error, resp);
+    });
 
   $(".sub_navbar a").off().one("click", function(e){
     e.preventDefault();
@@ -147,7 +167,7 @@ app.factory('Server', function ($http) {
   var factory = {};
 
   factory.getSchool = (schoolName, onComplete) => {
-    $http.get('/school/#{schoolName}').then((resp) => {
+    $http.get(`/school/${schoolName}`).then((resp) => {
       onComplete(null, resp);
     }, (err) => {
       onComplete(err, null);
@@ -155,7 +175,7 @@ app.factory('Server', function ($http) {
   };
 
   factory.saveSchool = (data, onComplete) => {
-    $http.get('/save_school', {school_info: data}).then((resp) => {
+    $http.post('/save_school', {school_info: data}).then((resp) => {
       onComplete(null, resp);
     }, (err) => {
       onComplete(err, null);
