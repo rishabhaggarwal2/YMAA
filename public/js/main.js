@@ -165,7 +165,7 @@ app.controller('NavCtrl', function ($scope, $location/* $scope, $location, $http
 
 app.factory('Server', function ($http) {
   var factory = {};
-  // for heroku
+  // fix push
   factory.getSchool = (schoolName, onComplete) => {
     $http.get(`/school/${schoolName}`).then((resp) => {
       onComplete(null, resp);
