@@ -1,0 +1,35 @@
+<div class="container-fluid generalSection lightSection text-center" id="form">
+	<div class="container" style="text-align:left;">
+		<form style="margin-top:200px;">
+			<h1>Create new School</h1>
+			<div class="row">
+				<label for="name">Name</label><br>
+				<input type="text" name="name" ng-model="name" placeholder="Name" required/>
+			</div>
+			<div class="row" style="margin-top:20px;">
+				<label for="impact">Impact</label><br>
+				<textarea name="impact" ng-model="impact" placeholder="Impact"></textarea>
+			</div>
+			<div class="row" style="margin-top:20px;">
+				<label>Social Media Links</label><br>
+				<input type="text" name="facebook" ng-model="facebook" placeholder="facebook" />
+				<input type="text" name="instagram" ng-model="instagram" placeholder="instagram" />
+				<input type="text" name="twitter" ng-model="twitter" placeholder="twitter" />
+			</div>
+			<div class="row" style="margin-top:20px;">
+				<label>Calendar Link</label><br>
+				<input type="text" name="calendar" ng-model="calendar" placeholder="calendar" />
+			</div>
+			<div class="row" style="margin-top:20px;">
+				<label>Members</label><br>
+				<input type="file" name="member1pic" ng-model="member1pic" placeholder="member1Pic" file-model="myFile"/>
+				<input type="text" name="member1name" ng-model="member1name" placeholder="member1name"/>
+				<input type="text" name="member1title" ng-model="member1title" placeholder="member1title"/>
+				<input type="text" name="member1url" ng-model="member1url" placeholder="member1url"/>
+			</div>
+			<div class="row" style="margin-top:20px;">
+				<button class="btn createSubmit">Submit</button>
+			</div>
+		</form>
+	</div>
+</div>

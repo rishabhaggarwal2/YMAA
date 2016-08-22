@@ -16,9 +16,10 @@ app.config(['$routeProvider', function ($routeProvider) {
     .when("/about", {templateUrl: "../partials/about.html", controller: "PageCtrl"})
     .when("/research", {templateUrl: "../partials/research.html", controller: "PageCtrl"})
     .when("/alzheimers", {templateUrl: "../partials/alzheimers.html", controller: "PageCtrl"})
-    .when("/school/:school_name", {templateUrl: "../partials/ucla.html", controller: "ChapterCtrl"})
+    .when("/create", {templateUrl: "../partials/create.html", controller: "CreateCtrl"})
+    .when("/:school_name", {templateUrl: "../partials/ucla.html", controller: "ChapterCtrl"})
     // else 404
-    .otherwise("/404", {templateUrl: "../partials/404.html", controller: "PageCtrl"});
+    .when("/404", {templateUrl: "../partials/404.html", controller: "ChapterCtrl"})
 }]);
 
 /**
@@ -99,13 +100,6 @@ app.controller('PageCtrl', function ($scope, Server /* $scope, $location, $http 
   $scope.advisorsClick = function() {
     reset();
     $scope.advisors = true;
-    // Server.saveSchool({
-    //   name: "UCLA",
-    //   impact: "lolol",
-    //   address: "1234 sd sf sd",
-    // }, function(error, resp){
-    //   console.log(error, resp);
-    // });
   };
 
   
@@ -124,12 +118,14 @@ app.controller('ChapterCtrl', function ($scope, $routeParams, Server/* $scope, $
 
   Server.getSchool($routeParams.school_name, function(error, resp){
     console.log(error, resp);
+    if (!resp.data[0]) {
+      window.location = "/#/404";
+    } 
+    else{
+      $scope.school = resp.data[0];
+    }
   });
 
-  Server.uploadProfilePicture("http://localhost:8000/assets/images/andrew.jpg",
-    function(error, resp){
-      console.log(error, resp);
-    });
 
   $(".sub_navbar a").off().one("click", function(e){
     e.preventDefault();
@@ -139,6 +135,46 @@ app.controller('ChapterCtrl', function ($scope, $routeParams, Server/* $scope, $
     console.log(scrollPosition);
     $("html, body").animate({ scrollTop: scrollPosition });
   });
+});
+
+
+app.controller('CreateCtrl', function ($scope, $routeParams, Server) {
+  console.log("Create Controller reporting for duty.");
+
+  $(".createSubmit").click(function(){
+    var file = $scope.myFile;
+                   
+    console.log('file is ' );
+    console.dir(file);
+
+    // Server.uploadProfilePicture("http://localhost:8000/assets/images/andrew.jpg",
+    // function(error, resp){
+    //   console.log(error, resp);
+    // });
+
+    var reader = new FileReader();
+    reader.onload = function(){
+      var dataURL = reader.result;
+      Server.uploadProfilePicture(dataURL, function(error, resp){
+          console.log(error, resp);
+      });
+    };
+    reader.readAsDataURL(file);
+
+  });
+  // Server.uploadProfilePicture("http://localhost:8000/assets/images/andrew.jpg",
+  //   function(error, resp){
+  //     console.log(error, resp);
+  //   });
+
+  // Server.saveSchool({
+  //   name: "UCLA",
+  //   impact: "lolol",
+  //   address: "1234 sd sf sd",
+  // }, function(error, resp){
+  //   console.log(error, resp);
+  // });
+
 });
 
 /**
@@ -162,6 +198,24 @@ app.controller('NavCtrl', function ($scope, $location/* $scope, $location, $http
     }  
   });
 });
+
+
+app.directive('fileModel', ['$parse', function ($parse) {
+  return {
+     restrict: 'A',
+     link: function(scope, element, attrs) {
+        var model = $parse(attrs.fileModel);
+        var modelSetter = model.assign;
+        
+        element.bind('change', function(){
+           scope.$apply(function(){
+              modelSetter(scope, element[0].files[0]);
+           });
+        });
+     }
+  };
+}]);
+
 
 app.factory('Server', function ($http) {
   var factory = {};
