@@ -109,20 +109,32 @@ app.controller('PageCtrl', function ($scope, Server /* $scope, $location, $http 
 /**
  * Controls the Chapters
  */
-app.controller('ChapterCtrl', function ($scope, $routeParams, Server/* $scope, $location, $http */) {
+app.controller('ChapterCtrl', function ($sce, $scope, $routeParams, Server/* $scope, $location, $http */) {
   // console.log("Page Controller reporting for duty.");
   var sectionScroll;
   var scrollPosition;
 
   console.log($routeParams);
 
+  $scope.trustAsResourceUrl = $sce.trustAsResourceUrl;
+
   Server.getSchool($routeParams.school_name, function(error, resp){
-    console.log(error, resp);
+     console.log(error, resp);
     if (!resp.data[0]) {
       window.location = "/#/404";
     } 
     else{
       $scope.school = resp.data[0];
+      $scope.school.team.forEach(function(elem){
+        if (!elem.prof_url) {
+          elem.prof_url = "assets/images/user.png";
+        }
+      });
+      $scope.school.news.forEach(function(elem){
+        if (!elem.image_url) {
+          elem.image_url = "assets/images/why1.png";
+        }
+      });
     }
   });
 
@@ -152,31 +164,104 @@ app.controller('CreateCtrl', function ($scope, $routeParams, Server) {
     //   console.log(error, resp);
     // });
 
-    var reader = new FileReader();
-    reader.onload = function(){
-      var dataURL = reader.result;
-      Server.uploadProfilePicture(dataURL, function(error, resp){
-          console.log(error, resp);
+    //   var reader = new FileReader();
+    //   reader.onload = function(){
+    //     var dataURL = reader.result;
+    //     Server.uploadProfilePicture(dataURL, function(error, resp){
+    //         console.log(error, resp);
+    //     });
+    //   };
+    //   reader.readAsDataURL(file);
+
+    // });
+    // Server.uploadProfilePicture("http://localhost:8000/assets/images/andrew.jpg",
+    //   function(error, resp){
+    //     console.log(error, resp);
+    //   });
+    var members = [];
+    var news = [];
+    if ($scope.name1) {
+      members.push({
+        name: $scope.name1,
+        position: $scope.position1,
+        prof_url: "",
       });
-    };
-    reader.readAsDataURL(file);
+    }
+    if ($scope.name2) {
+      members.push({
+        name: $scope.name2,
+        position: $scope.position2,
+        prof_url: "",
+      });
+    }
+    if ($scope.name3) {
+      members.push({
+        name: $scope.name3,
+        position: $scope.position3,
+        prof_url: "",
+      });
+    }
+    if ($scope.name4) {
+      members.push({
+        name: $scope.name4,
+        position: $scope.position4,
+        prof_url: "",
+      });
+    }
+    if ($scope.name5) {
+      members.push({
+        name: $scope.name5,
+        position: $scope.position5,
+        prof_url: "",
+      });
+    }
+    if ($scope.name6) {
+      members.push({
+        name: $scope.name6,
+        position: $scope.position6,
+        prof_url: "",
+      });
+    }
+    if ($scope.title1) {
+      news.push({
+        title: $scope.title1,
+        date: $scope.date1,
+        article_url: $scope.article_url1,
+        image_url: "",
+      });
+    }
+    if ($scope.title2) {
+      news.push({
+        title: $scope.title2,
+        date: $scope.date2,
+        article_url: $scope.article_url2,
+        image_url: "",
+      });
+    }
+    if ($scope.title3) {
+      news.push({
+        title: $scope.title3,
+        date: $scope.date3,
+        article_url: $scope.article_url3,
+        image_url: "",
+      });
+    }
 
+    Server.saveSchool({
+      name: $scope.name,
+      impact: $scope.impact,
+      address: $scope.address,
+      fb_link: $scope.fb_link,
+      instagram: $scope.fb_link,
+      twitter_link: $scope.twitter_link,
+      calendar: $scope.calendar,
+      team: members,
+      news: news,
+    }, function(error, resp){
+      console.log(error, resp);
+    });
   });
-  // Server.uploadProfilePicture("http://localhost:8000/assets/images/andrew.jpg",
-  //   function(error, resp){
-  //     console.log(error, resp);
-  //   });
-
-  // Server.saveSchool({
-  //   name: "UCLA",
-  //   impact: "lolol",
-  //   address: "1234 sd sf sd",
-  // }, function(error, resp){
-  //   console.log(error, resp);
-  // });
-
 });
-
 /**
  * Controls navBar
  */

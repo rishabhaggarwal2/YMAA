@@ -59,7 +59,7 @@
         <h1>Events</h1>
         <div class="row">
             <center>
-            <iframe src="{{school.calendar}}" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+            <iframe src="{{trustAsResourceUrl(school.calendar)}}" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
             <!-- <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showDate=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=tds5love9au8p12ukq590e32ls%40group.calendar.google.com&amp;color=%23B1440E&amp;ctz=America%2FLos_Angeles" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe> -->
             </center>
         </div>
@@ -75,14 +75,14 @@
         <br>
         <div class="row">
 
-            <div class="member">
-                <a href="https://www.linkedin.com"><i class="fa fa-linkedin-square fa-2x icon" aria-hidden="true"></i></a>
-                <img src="assets/images/nihal.jpeg">
-                <p class="name">Nihal Satyadev</p>
-                <p class="post">President and Co-Founder</p>
+            <div class="member" ng-repeat="member in school.team">
+                <!-- <a href="https://www.linkedin.com"><i class="fa fa-linkedin-square fa-2x icon" aria-hidden="true"></i></a> -->
+                <img ng-src="{{member.prof_url}}">
+                <p class="name">{{member.name}}</p>
+                <p class="post">{{member.position}}</p>
             </div>
 
-            <div class="member">
+            <!-- <div class="member">
                 <a href="https://www.linkedin.com"><i class="fa fa-linkedin-square fa-2x icon" aria-hidden="true"></i></a>
                 <img src="assets/images/jaygopal.jpg">
                 <p class="name">Jay Gopal</p>
@@ -136,7 +136,7 @@
                 <img src="assets/images/lana.jpg">
                 <p class="name">Lana Womack</p>
                 <p class="post">Board Intern</p>
-            </div>
+            </div> -->
 
         </div>
     </div>
@@ -149,7 +149,15 @@
         </div>
         <br>
         <div class="row">
-            <div class="news">
+            <div class="news" ng-repeat="new in school.news">
+                <a ng-href="{{new.article_url}}"><i class="fa fa-arrow-right fa-2x icon" aria-hidden="true"></i></a>
+                <img ng-src="{{new.image_url}}">
+                <p class="name">{{new.title}}</p>
+                <p class="post">{{new.date}}</p>
+                <div class="line"></div>
+            </div>
+
+            <!-- <div class="news">
                 <a href="https://www.linkedin.com"><i class="fa fa-arrow-right fa-2x icon" aria-hidden="true"></i></a>
                 <img src="assets/images/why1.png">
                 <p class="name">Lorem Ipsum dolor sit amet hlak elekj long article title 1</p>
@@ -171,7 +179,7 @@
                 <p class="name">Lorem Ipsum dolor sit amet hlak elekj</p>
                 <p class="post">July 2016</p>
                 <div class="line"></div>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>

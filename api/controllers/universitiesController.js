@@ -27,11 +27,13 @@ module.exports = {
       listEntry.name = parameters.name
     }
     if (parameters.impact) school.impact = parameters.impact
+    if (parameters.address) school.address = parameters.address
+    if (parameters.calendar) school.calendar = parameters.calendar
     if (parameters.fb_link) school.fb_link = parameters.fb_link
     if (parameters.twitter_link) school.twitter_link = parameters.twitter_link
-    if (parameters.address) school.address = parameters.address
     if (parameters.instagram_link) school.instagram_link = parameters.instagram_link
     if (parameters.team) school.team = parameters.team
+    if (parameters.news) school.news = parameters.news
 
     Promise.all([
       school.save(),
@@ -56,6 +58,8 @@ module.exports = {
     })
   },
   uploadProfilePicture: (req, res) => {
+    debugger;
+    console.log("lode", req);
     AWS.config.update({accessKeyId: config.AWS_ACCESS_KEY, secretAccessKey: config.AWS_SECRET_KEY})
     const ymaa_bucket = new AWS.S3({params: {Bucket: config.S3_BUCKET}})
     const options = {
