@@ -19,7 +19,7 @@ app.engine('html', require('ejs').renderFile)
 app.set('port', (process.env.PORT || 8000))
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*')
-  res.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE");
+  res.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE, PUT");
   res.setHeader("Access-Control-Allow-Headers", "*");
   next()
 })

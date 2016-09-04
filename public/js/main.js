@@ -154,24 +154,22 @@ app.controller('CreateCtrl', function ($scope, $routeParams, Server) {
   console.log("Create Controller reporting for duty.");
 
   $(".createSubmit").click(function(){
-    var file = $scope.myFile;
-                   
+    var file = $(".lol").files[0];
     console.log('file is ' );
-    console.dir(file);
+    console.log(file);
 
-    // Server.uploadProfilePicture("http://localhost:8000/assets/images/andrew.jpg",
-    // function(error, resp){
-    //   console.log(error, resp);
-    // });
+    Server.uploadProfilePicture(file, file.type, file.name, function(error, resp){
+      console.log(error, resp);
+    });
 
-    //   var reader = new FileReader();
-    //   reader.onload = function(){
-    //     var dataURL = reader.result;
-    //     Server.uploadProfilePicture(dataURL, function(error, resp){
-    //         console.log(error, resp);
-    //     });
-    //   };
-    //   reader.readAsDataURL(file);
+    // var reader = new FileReader();
+    // reader.onload = function(){
+    //   var dataURL = reader.result;
+    //   Server.uploadProfilePicture(dataURL, file.type, function(error, resp){
+    //       console.log(error, resp);
+    //   });
+    // };
+    // reader.readAsDataURL(file);
 
     // });
     // Server.uploadProfilePicture("http://localhost:8000/assets/images/andrew.jpg",
@@ -301,6 +299,9 @@ app.directive('fileModel', ['$parse', function ($parse) {
   };
 }]);
 
+// figure out the image thing and fix that
+// and make a get school-list request call in the factory to get the lists of schools
+
 
 app.factory('Server', function ($http) {
   var factory = {};
@@ -321,8 +322,8 @@ app.factory('Server', function ($http) {
     });
   };
 
-  factory.uploadProfilePicture = (picture, onComplete) => {
-    $http.post('/upload_profile_picture', {picture: picture}).then((resp) => {
+  factory.uploadProfilePicture = (picture, mimetype, name, onComplete) => {
+    $http.post({name: name, picture: picture, type: mimetype}).then((resp) => {
       onComplete(null, resp);
     }, (err) => {
       onComplete(err, null);

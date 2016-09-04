@@ -11,7 +11,9 @@ const Schema = mongoose.Schema
  */
 
 const listSchema = new Schema({
-  name: {type: String, required: true, index: true}
+  name: { type: String, required: true, index: true },
+  state: { type: String, required: true},
+  address: { type: String, required: true }
 })
 
 const ListOfSchools = mongoose.model('ListOfSchools', listSchema)

@@ -23,15 +23,14 @@ const Schema = mongoose.Schema
  */
 
 const schoolSchema = new Schema({
-  name: {type: String, required: true, index: true},
-  impact: {type: String, required: false},
-  address: {type: String, required: false},
-  calendar: {type: String, required: false},
-  fb_link: {type: String, required: false},
-  twitter_link: {type: String, required: false},
-  instagram_link: {type: String, required: false},
-  team: [{name: String, position: String, prof_url: String, required: false}],
-  news: [{title: String, date: String, article_url: String, image_url: String, required: false}]
+  name: { type: String, required: true, index: true },
+  impact: { type: String, required: false },
+  address: { type: String, required: true },
+  state: { type: String, required: true },
+  calendar: { type: String, required: false },
+  social_media_links: [{ media_type: String, media_link: String, required: false }],
+  team: [{ name: String, position: String, prof_url: String, required: false }],
+  news: [{ title: String, date: String, article_url: String, image_url: String, required: false }]
 })
 
 const School = mongoose.model('School', schoolSchema)

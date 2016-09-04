@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
 })
 router.get('/school/:school_name', universitiesController.getSchoolData)
 router.post('/save_school', universitiesController.saveSchool)
-router.post('/upload_profile_picture', universitiesController.uploadProfilePicture)
+router.post('/upload_profile_picture/:name', universitiesController.uploadProfilePicture)
 router.post('/donate', paymentsController.donate)
 
 module.exports = router
