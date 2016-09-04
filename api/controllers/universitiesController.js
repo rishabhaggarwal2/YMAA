@@ -37,9 +37,11 @@ module.exports = {
       listEntry.address = parameters.address
     }
     if (parameters.calendar) school.calendar = parameters.calendar
-    if (parameters.fb_link) school.fb_link = parameters.fb_link
-    if (parameters.twitter_link) school.twitter_link = parameters.twitter_link
-    if (parameters.instagram_link) school.instagram_link = parameters.instagram_link
+    if (parameters.mediaLinks) {
+      mediaLinks.forEach((obj) => {
+        school.social_media_links.push(obj)
+      })
+    }
     if (parameters.team) school.team = parameters.team
     if (parameters.news) school.news = parameters.news
 
@@ -65,6 +67,25 @@ module.exports = {
     }, (err) => {
       res.status(400).send('List of Schools unavailable', err)
     })
+  },
+  addSocialMediaLinks: (req, res) => {
+    const schoolName = req.params.school_name
+    const mediaLinks = req.body.media
+    School.find({name: schoolName}, (err, doc) => {
+      mediaLinks.forEach((obj) => {
+        doc.social_media_links.push(mediaLinks)
+      })
+      doc.save((err) => {
+        if (err) {
+          res.status(400).send('could not save school', err)
+        } else {
+          res.status(200).send('successfully added social media links')
+        }
+      })
+    }, (err) => {
+      res.status(400).send('could not find school', err)
+    })
+
   },
   uploadProfilePicture: (req, res) => {
     AWS.config.update({accessKeyId: CONFIG.AWS_ACCESS_KEY, secretAccessKey: CONFIG.AWS_SECRET_KEY, region: 'us-west-2', signatureVersion: 'v4'})

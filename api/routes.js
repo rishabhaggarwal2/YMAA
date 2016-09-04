@@ -16,5 +16,7 @@ router.get('/school/:school_name', universitiesController.getSchoolData)
 router.post('/save_school', universitiesController.saveSchool)
 router.post('/upload_profile_picture/:name', universitiesController.uploadProfilePicture)
 router.post('/donate', paymentsController.donate)
+router.post('/add_social_media/:school_name', universitiesController.addSocialMediaLinks)
+router.get('/list_of_schools', universitiesController.getListOfSchools)
 
 module.exports = router
