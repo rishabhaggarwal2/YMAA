@@ -108,7 +108,7 @@ module.exports = {
         res.status(200).send('upload file: ERROR')
       } else {
         console.log('success nigga', resp)
-        res.status(200).send('UPLOAD: SUCCESS')
+        res.status(200).send(resp)
       }
     })
 
