@@ -99,7 +99,7 @@ module.exports = {
       Bucket: CONFIG.S3_BUCKET,
       Key: req.body.name,
       ContentType: req.body.type,
-      Body: new File([req.body.picture], req.body.name),
+      Body: req.body.picture,
       ACL: "public-read",
     }
 
