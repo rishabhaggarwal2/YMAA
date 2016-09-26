@@ -99,7 +99,8 @@ module.exports = {
       Bucket: CONFIG.S3_BUCKET,
       Key: req.body.name,
       ContentType: req.body.type,
-      Body: req.body.picture
+      Body: req.body.picture,
+      ACL: "public-read",
     }
 
     ymaa_bucket.upload(options, (err, resp) => {
