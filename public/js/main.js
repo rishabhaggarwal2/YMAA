@@ -154,22 +154,26 @@ app.controller('CreateCtrl', function ($scope, $routeParams, Server) {
   console.log("Create Controller reporting for duty.");
 
   $(".createSubmit").click(function(){
-    var file = $(".lol").files[0];
+    var file = $scope.myFile1;
+
     console.log('file is ' );
     console.log(file);
 
-    Server.uploadProfilePicture(file, file.type, file.name, function(error, resp){
-      console.log(error, resp);
-    });
+    // Server.uploadProfilePicture(file, file.type, file.name, function(error, resp){
+    //   console.log(error, resp);
+    // });
 
-    // var reader = new FileReader();
-    // reader.onload = function(){
-    //   var dataURL = reader.result;
-    //   Server.uploadProfilePicture(dataURL, file.type, function(error, resp){
-    //       console.log(error, resp);
-    //   });
-    // };
-    // reader.readAsDataURL(file);
+    var reader = new FileReader();
+    reader.onload = function(){
+      var dataURL = reader.result;
+      Server.uploadProfilePicture(dataURL, file.type, file.name, function(error, resp){
+          console.log(error, resp);
+      });
+    };
+    reader.readAsDataURL(file);
+
+    //remove
+    return;
 
     // });
     // Server.uploadProfilePicture("http://localhost:8000/assets/images/andrew.jpg",
@@ -323,7 +327,7 @@ app.factory('Server', function ($http) {
   };
 
   factory.uploadProfilePicture = (picture, mimetype, name, onComplete) => {
-    $http.post({name: name, picture: picture, type: mimetype}).then((resp) => {
+    $http.post('/upload_profile_picture', {name: name, picture: picture, type: mimetype}).then((resp) => {
       onComplete(null, resp);
     }, (err) => {
       onComplete(err, null);

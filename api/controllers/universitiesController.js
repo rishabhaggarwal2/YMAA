@@ -4,6 +4,7 @@ const ListOfSchools = require('../models/ListOfSchools')
 const AWS = require('aws-sdk')
 const validator = require('validator')
 const CONFIG = require('../../config')
+AWS.config.region = 'us-west-2';
 // For simplicities sake, resolve all Promises here and send back data if needed
 
 //heroku init push
@@ -88,9 +89,14 @@ module.exports = {
 
   },
   uploadProfilePicture: (req, res) => {
+    console.log(CONFIG);
+
     AWS.config.update({accessKeyId: CONFIG.AWS_ACCESS_KEY, secretAccessKey: CONFIG.AWS_SECRET_KEY, region: 'us-west-2', signatureVersion: 'v4'})
+    AWS.config.paramValidation = false;
+
     const ymaa_bucket = new AWS.S3({params: {Bucket: CONFIG.S3_BUCKET}})
     const options = {
+      Bucket: CONFIG.S3_BUCKET,
       Key: req.body.name,
       ContentType: req.body.type,
       Body: req.body.picture
