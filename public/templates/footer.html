@@ -28,14 +28,14 @@
                         <a href="#/about" class="hot">Donate</a>
                     </div>
                     <div class="col-lg-4">
-                        <a href=""><i class="fa fa-facebook"></i> Facebook</a>
-                        <a href=""><i class="fa fa-twitter"></i> Twitter</a>
-                        <a href=""><i class="fa fa-youtube"></i> Youtube</a>
+                        <a href="https://www.facebook.com/theyouthmovementagainstalzheimers/"><i class="fa fa-facebook"></i> Facebook</a>
+                        <a href="https://twitter.com/youthagainstalz"><i class="fa fa-twitter"></i> Twitter</a>
+                        <a href="https://www.instagram.com/theyouthmovement_org/"><i class="fa fa-instagram"></i> Instagram</a>
                         <a href="https://medium.com/the-youth-movement-against-alzheimers"><i class="fa fa-medium"></i> Medium</a>
                     </div>
                 </div>
                 <div class="row signup">
-                    <input type="text" name="emailSignup" placeholder="Enter your email to sign up to our newsletter" /><a href="#">Sign Up</a>
+                    <input type="text" name="emailSignupFooter" placeholder="Enter your email to sign up to our newsletter" /><a class="signUpFooterBut">Sign Up</a>
                 </div>
             </div>
         </div>
@@ -44,3 +44,10 @@
         </div>
     </div>
 </footer>
+
+<script type="text/javascript">
+  $(".signUpFooterBut").click(function(){
+    var email = $("input[name='emailSignupFooter']")[0].value;
+    window.open("http://theyouthmovement.us12.list-manage1.com/subscribe?u=5f851aa4acb0fd4c38a3e670b&id=83fc1b1e2a&MERGE0="+email);
+  });
+</script>

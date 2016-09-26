@@ -5,7 +5,7 @@ $purple: rgba(129, 2, 141, 1);
 $whiteTransparent: rgba(255, 255, 255, 0.4);
 $goldTransparent: rgba(234, 173, 37, 0.6);
 $purpleTransparent: rgba(129, 2, 141, 0.4);
-$darkPurpleTransparent: rgba(129, 2, 141, 0.6);
+$darkPurpleTransparent: rgba(129, 2, 141, 0.8);
 $tablet:767px;
 $desktop:1199px;
 
@@ -884,9 +884,15 @@ footer{
 /*What is Alzheimer's Page*/
 
 #splash_abt{
-	background:url('../assets/images/whatis1.jpg');
-	background-size:cover;
-	background-position:center 15%;
+	background:#fff;
+	color:#333;
+	h1{
+		color:#333;
+	}
+	iframe{
+		width:100%;
+		height:60vh;
+	}
 }
 
 .neurons{
@@ -894,8 +900,14 @@ footer{
 	margin-right: -10%;
 	padding: 60px 80px;
 	background-color: $white;
+	position:relative;
 	p{
 		width: 350px;
+	}
+	.neuronPic{
+		position:absolute;
+		right:0px;
+		top:10%;
 	}
 	#neuron1{
 		float: right;
@@ -909,11 +921,14 @@ footer{
 
 #alz_stats{
 	margin-top: 110px;
-	height: 400px;
 	width: auto;
-	/*background:url('../assets/images/splash.jpg');*/
-	background-color: $purple;
+	background:url('../assets/images/whatis.jpg');
+	background-size:cover;
+	// background-color: $purple;
 	color: $white;
+	.overlay{
+		background:$darkPurpleTransparent;
+	}
 	.container{
 		margin:auto;
 	}
@@ -928,14 +943,13 @@ footer{
 		}
 	}
 	.row{
-		margin-top: 160px;
+		margin:120px 0;
 	}
 
 	p{
 		text-align: left;
 		width: 300px;
-		position: absolute;
-		right: 100px;
+		margin-left:60%;
 	}
 }
 
