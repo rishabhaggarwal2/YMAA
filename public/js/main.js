@@ -168,7 +168,7 @@ app.controller('CreateCtrl', function ($scope, $routeParams, Server) {
     var reader = new FileReader();
     reader.onload = function(){
       var dataURL = reader.result;
-      Server.uploadProfilePicture(file, file.type, $scope.name + file.name, function(error, resp){
+      Server.uploadProfilePicture(dataURL, file.type, $scope.name + file.name, function(error, resp){
           console.log(error, resp);
       });
     };
