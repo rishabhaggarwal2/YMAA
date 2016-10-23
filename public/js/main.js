@@ -2,7 +2,8 @@
  * Main AngularJS Web Application
  */
 var app = angular.module('ymaaSPA', [
-  'ngRoute'
+  'ngRoute', 
+  'ngFileUpload'
 ]);
 
 /**
@@ -26,19 +27,6 @@ app.config(['$routeProvider', function ($routeProvider) {
  * Controls the Home
  */
 app.controller('HomeCtrl', function ($scope/* $scope, $location, $http */) {
-  // console.log("Home Controller reporting for duty.");
-  // $.OrderlyTyper.options = {
-  //       rotateRamdomly    : false,
-  //       highlightSpeed    : 20,
-  //       typeSpeed         : 100,
-  //       clearDelay        : 500,
-  //       typeDelay         : 200,
-  //       clearOnHighlight  : true,
-  //       OrderlyTyperDataAttr     : 'data-OrderlyTyper-targets',
-  //       OrderlyTyperInterval     : 4000
-  //     }
-
-  // $('[data-OrderlyTyper-targets]').OrderlyTyper();
   function rotateText(){
     var text = $("[data-rotateText]").attr('data-rotateText');
     text = text.split(",");
@@ -150,32 +138,75 @@ app.controller('ChapterCtrl', function ($sce, $scope, $routeParams, Server/* $sc
 });
 
 
-app.controller('CreateCtrl', function ($scope, $routeParams, Server) {
+app.controller('CreateCtrl', function ($scope, $routeParams, Server, Upload) {
   console.log("Create Controller reporting for duty.");
+  $scope.name = "lol";
+  $scope.policy = "ewogICJleHBpcmF0aW9uIjogIjIwMjAtMDEtMDFUMDA6MDA6MDBaIiwKICAiY29uZGl0aW9ucyI6IFsKICAgIHsiYnVja2V0IjogInltYWEtY29udGVudCJ9LAogICAgWyJzdGFydHMtd2l0aCIsICIka2V5IiwgIiJdLAogICAgeyJhY2wiOiAicHVibGljIn0sCiAgICBbInN0YXJ0cy13aXRoIiwgIiRDb250ZW50LVR5cGUiLCAiIl0sCiAgICBbInN0YXJ0cy13aXRoIiwgIiRmaWxlbmFtZSIsICIiXSwKICAgIFsiY29udGVudC1sZW5ndGgtcmFuZ2UiLCAwLCA1MjQyODgwMDBdCiAgXQp9";
+  $scope.signature = "7m4Pelt1Ghkm/FeRsj/gWZ4Oj1A=";
+
+  $scope.uploadFiles = function(file, errFiles) {
+        console.log("loda", file, errFiles);
+        $scope.f = file;
+        $scope.errFile = errFiles && errFiles[0];
+        if (file) {
+            file.upload = Upload.upload({
+            url: '/upload_profile_picture', //S3 upload url including bucket name
+            method: 'POST',
+            data: {
+              name: file.name,
+              picture: file,
+              type: file.type
+            },
+            file: file
+            // data: {
+            //     key: file.name, // the key to store the file on S3, could be file name or customized
+            //     AWSAccessKeyId: "AKIAISCMTRMV7OPZC5EA",
+            //     acl: 'public', // sets the access to the uploaded file in the bucket: private, public-read, ...
+            //     policy: $scope.policy, // base64-encoded json policy (see article below)
+            //     signature: $scope.signature, // base64-encoded signature based on policy string (see article below)
+            //     "Content-Type": file.type != '' ? file.type : 'application/octet-stream', // content type of the file (NotEmpty)
+            //     filename: file.name, // this is needed for Flash polyfill IE8-9
+            //     file: file
+            // }
+        });
+
+            file.upload.then(function (response) {
+                $timeout(function () {
+                    file.result = response.data;
+                });
+            }, function (response) {
+                if (response.status > 0)
+                    $scope.errorMsg = response.status + ': ' + response.data;
+            }, function (evt) {
+                file.progress = Math.min(100, parseInt(100.0 * 
+                                         evt.loaded / evt.total));
+            });
+        }   
+    };
 
   $(".createSubmit").click(function(){
-    var file = $scope.myFile1;
+    // var file = $scope.myFile1;
 
-    console.log('file is ' );
-    console.log(file);
+    // console.log('file is ' );
+    // console.log(file);
 
     // Server.uploadProfilePicture(file, file.type, file.name, function(error, resp){
     //   console.log(error, resp);
     // });
 
-    $scope.name = "lol";
+    // $scope.name = "lol";
 
-    var reader = new FileReader();
-    reader.onload = function(){
-      var dataURL = reader.result;
-      Server.uploadProfilePicture(dataURL, file.type, $scope.name + file.name, function(error, resp){
-          console.log(error, resp);
-      });
-    };
-    reader.readAsDataURL(file);
+    // var reader = new FileReader();
+    // reader.onload = function(){
+    //   var dataURL = reader.result;
+    //   Server.uploadProfilePicture(dataURL, file.type, $scope.name + file.name, function(error, resp){
+    //       console.log(error, resp);
+    //   });
+    // };
+    // reader.readAsDataURL(file);
 
-    //remove
-    return;
+    // //remove
+    // return;
 
     // });
     // Server.uploadProfilePicture("http://localhost:8000/assets/images/andrew.jpg",
