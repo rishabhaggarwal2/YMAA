@@ -95,11 +95,14 @@ module.exports = {
     AWS.config.paramValidation = false;
 
     const ymaa_bucket = new AWS.S3({params: {Bucket: CONFIG.S3_BUCKET}})
+
+    console.log("loloa", req.files.file);
+
     const options = {
       Bucket: CONFIG.S3_BUCKET,
       Key: req.body.name,
       ContentType: req.body.type,
-      Body: req.body.picture,
+      Body: req.files.file,
       ACL: "public-read",
     }
 

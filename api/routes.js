@@ -3,6 +3,9 @@
 const express = require('express')
 let router = express.Router()
 const config = require('../config')
+const multiparty = require('connect-multiparty')
+const multipartyMiddleware = multiparty()
+
 
 // Controllers
 
@@ -14,7 +17,7 @@ router.get('/', (req, res) => {
 })
 router.get('/school/:school_name', universitiesController.getSchoolData)
 router.post('/save_school', universitiesController.saveSchool)
-router.post('/upload_profile_picture', universitiesController.uploadProfilePicture)
+router.post('/upload_profile_picture', multipartyMiddleware, universitiesController.uploadProfilePicture)
 router.post('/donate', paymentsController.donate)
 router.post('/add_social_media/:school_name', universitiesController.addSocialMediaLinks)
 router.get('/list_of_schools', universitiesController.getListOfSchools)
