@@ -95,15 +95,19 @@ module.exports = {
     AWS.config.paramValidation = false;
 
     const ymaa_bucket = new AWS.S3({params: {Bucket: CONFIG.S3_BUCKET}})
+
+    buf = new Buffer(req.body.picture.replace(/^data:image\/\w+;base64,/, ""),'base64')
+
     const options = {
       Bucket: CONFIG.S3_BUCKET,
       Key: req.body.name,
       ContentType: req.body.type,
-      Body: req.body.picture,
+      ContentEncoding: 'base64',
+      Body: buf,
       ACL: "public-read",
     }
 
-    ymaa_bucket.upload(options, (err, resp) => {
+    ymaa_bucket.putObject(options, (err, resp) => {
       if (err) {
         console.log('UPLOAD ERROR', err)
         res.status(200).send('upload file: ERROR')
@@ -112,6 +116,16 @@ module.exports = {
         res.status(200).send(resp)
       }
     })
+
+    // ymaa_bucket.upload(options, (err, resp) => {
+    //   if (err) {
+    //     console.log('UPLOAD ERROR', err)
+    //     res.status(200).send('upload file: ERROR')
+    //   } else {
+    //     console.log('success nigga', resp)
+    //     res.status(200).send(resp)
+    //   }
+    // })
 
     // s3.upload(options, function (err, res) {
     //   if (err) {
