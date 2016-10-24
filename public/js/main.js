@@ -169,7 +169,6 @@ app.controller('CreateCtrl', function ($scope, $routeParams, Server) {
     reader.onload = function(){
       var dataURL = reader.result;
       dataURL = dataURL.slice(dataURL.indexOf(',')+1);
-      console.log(dataURL);
       Server.uploadProfilePicture(dataURL, file.type, $scope.name + file.name, function(error, resp){
           console.log(error, resp);
       });

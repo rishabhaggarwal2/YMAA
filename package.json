@@ -10,10 +10,6 @@
   "dependencies": {
     "aws-sdk": "latest",
     "body-parser": "latest",
-    "connect": "latest",
-    "multiparty": "latest",
-    "connect-multiparty": "latest",
-    "body-parser": "latest",
     "ejs": "2.5.1",
     "express": "latest",
     "lodash": "latest",
