@@ -4,10 +4,10 @@
 			<div class="row">
 				<h1>Create new School</h1>
 			</div>
-			<div class="row">
+			<!-- <div class="row">
 				<label for="name">Name</label><br>
 				<input type="text" name="name" ng-model="name" placeholder="Name" required/>
-			</div>
+			</div> -->
 			<div class="row" style="margin-top:20px;">
 				<label for="address">Address</label><br>
 				<textarea name="address" ng-model="address" placeholder="Address"></textarea>
@@ -29,23 +29,7 @@
 			<div class="row" style="margin-top:20px;">
 				<label>Members</label><br>
 				<div class="uploadMembers" style="margin-top:10px;">
-					<button 
-						type="file"
-						ngf-select="uploadFiles($file, $invalidFiles)"
-						accept="image/*" 
-						ngf-max-height="1000"
-						ngf-max-size="1MB">
-						Select File
-					</button>
-					<br><br>
-					File:
-					<div style="font:smaller">{{f.name}} {{errFile.name}} {{errFile.$error}} {{errFile.$errorParam}}
-					     <span class="progress" ng-show="f.progress >= 0">
-					         <div style="width:{{f.progress}}%"  
-					              ng-bind="f.progress + '%'"></div>
-					     </span>
-					 </div>     
-					 {{errorMsg}}
+					<input type="file" name="prof_pic1" ng-model="prof_pic1" placeholder="Member Picture" file-model="myFile1" class="lol"/>
 					<input type="text" name="name1" ng-model="name1" placeholder="Name"/>
 					<input type="text" name="position1" ng-model="position1" placeholder="Position"/>
 				</div>
