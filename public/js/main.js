@@ -17,6 +17,7 @@ app.config(['$routeProvider', function ($routeProvider) {
     .when("/research", {templateUrl: "../partials/research.html", controller: "PageCtrl"})
     .when("/alzheimers", {templateUrl: "../partials/alzheimers.html", controller: "PageCtrl"})
     .when("/create", {templateUrl: "../partials/create.html", controller: "CreateCtrl"})
+    .when("/join", {templateUrl: "../partials/join.html", controller: "JoinCtrl"})
     .when("/verify", {templateUrl: "../partials/verify.html", controller: "VerifyCtrl"})
     .when("/chapters", {templateUrl: "../partials/chapters.html", controller: "ChaptersCtrl"})
     .when("/404", {templateUrl: "../partials/four.html", controller: "FourCtrl"})
@@ -27,7 +28,7 @@ app.config(['$routeProvider', function ($routeProvider) {
 /**
  * Controls the Home
  */
-app.controller('HomeCtrl', function ($scope/* $scope, $location, $http */) {
+app.controller('HomeCtrl', function ($scope, Server/* $scope, $location, $http */) {
   function rotateText(){
     var text = $("[data-rotateText]").attr('data-rotateText');
     text = text.split(",");
@@ -49,6 +50,12 @@ app.controller('HomeCtrl', function ($scope/* $scope, $location, $http */) {
   }
 
   rotateText();
+
+  Server.getListOfSchools("", function(error, resp){
+     console.log(error, resp);
+     $scope.schools = resp.data;
+   });
+
 });
 
 /**
@@ -60,6 +67,10 @@ app.controller('HomeCtrl', function ($scope/* $scope, $location, $http */) {
        console.log(error, resp);
        $scope.schools = resp.data;
      });
+ });
+
+ app.controller('JoinCtrl', function ($scope, Server/* $scope, $location, $http */) {
+  
  });
 
  app.controller('ChaptersCtrl', function ($scope, Server/* $scope, $location, $http */) {

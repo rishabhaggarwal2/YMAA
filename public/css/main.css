@@ -885,4 +885,9 @@ footer {
       .boardMember .description {
         width: 100%; } }
 
+.joinTheMovement a {
+  text-transform: none !important;
+  font-size: 1em !important;
+  font-family: 'Open Sans', sans-serif; }
+
 /*# sourceMappingURL=main.css.map */
