@@ -4,18 +4,53 @@
 			<div class="row">
 				<h1>Create new School</h1>
 			</div>
-			<!-- <div class="row">
+			<div class="row">
 				<label for="name">Name</label><br>
 				<input type="text" name="name" ng-model="name" placeholder="Name" required/>
-			</div> -->
+			</div>
+			<div class="row">
+				<label for="name">Password</label><br>
+				<input type="text" name="password" ng-model="password" placeholder="Password" required/>
+			</div>
+
+			<div class="row" style="margin-top:20px;">
+				<button class="btn verifyName">Check</button>
+				 {{verifyStatus}}
+			</div>
+
 			<div class="row" style="margin-top:20px;">
 				<label for="address">Address</label><br>
 				<textarea name="address" ng-model="address" placeholder="Address"></textarea>
 			</div>
+
+			<div class="row" style="margin-top:20px;">
+				<label for="state">State</label><br>
+				<textarea name="state" ng-model="state" placeholder="State"></textarea>
+			</div>
+
+
 			<div class="row" style="margin-top:20px;">
 				<label for="impact">Impact</label><br>
 				<textarea name="impact" ng-model="impact" placeholder="Impact"></textarea>
 			</div>
+
+			<div class="row" style="margin-top:20px;">
+				<label for="background">Background</label><br>
+				<textarea name="background" ng-model="background" placeholder="Background URL"></textarea>
+			</div>
+
+
+			<div class="row" style="margin-top:20px;">
+				<label for="prevFunds">Previous Funds</label><br>
+				<textarea name="prevFunds" ng-model="prevFunds" placeholder="Previous Funds"></textarea>
+			</div>
+
+			<div class="row" style="margin-top:20px;">
+				<label for="fundGoals">Fund Raising Goals</label><br>
+				<textarea name="fundGoals" ng-model="fundGoals" placeholder="Fund Raising Goals"></textarea>
+			</div>
+
+
 			<div class="row" style="margin-top:20px;">
 				<label>Social Media Links</label><br>
 				<input type="text" name="fb_link" ng-model="fb_link" placeholder="facebook" />
@@ -32,36 +67,48 @@
 					<input type="file" name="prof_pic1" ng-model="prof_pic1" placeholder="Member Picture" file-model="myFile1" class="lol"/>
 					<input type="text" name="name1" ng-model="name1" placeholder="Name"/>
 					<input type="text" name="position1" ng-model="position1" placeholder="Position"/>
+					<button class="btn imageUpload" ng-click="uploadImage(0)">Upload</button>
+					{{imageError[0]}}
 				</div>
 
 				<div class="uploadMembers" style="margin-top:10px;">
 					<input type="file" name="prof_pic2" ng-model="prof_pic2" placeholder="Member Picture" file-model="myFile2"/>
 					<input type="text" name="name2" ng-model="name2" placeholder="Name"/>
 					<input type="text" name="position2" ng-model="position2" placeholder="Position"/>
+					<button class="btn imageUpload" ng-click="uploadImage(1)">Upload</button>
+					{{imageError[1]}}
 				</div>
 
 				<div class="uploadMembers" style="margin-top:10px;">
 					<input type="file" name="prof_pic3" ng-model="prof_pic3" placeholder="Member Picture" file-model="myFile3"/>
 					<input type="text" name="name3" ng-model="name3" placeholder="Name"/>
 					<input type="text" name="position3" ng-model="position3" placeholder="Position"/>
+					<button class="btn imageUpload" ng-click="uploadImage(2)">Upload</button>
+					{{imageError[2]}}
 				</div>
 
 				<div class="uploadMembers" style="margin-top:10px;">
 					<input type="file" name="prof_pic4" ng-model="prof_pic4" placeholder="Member Picture" file-model="myFile4"/>
 					<input type="text" name="name4" ng-model="name4" placeholder="Name"/>
 					<input type="text" name="position4" ng-model="position4" placeholder="Position"/>
+					<button class="btn imageUpload" ng-click="uploadImage(3)">Upload</button>
+					{{imageError[3]}}
 				</div>
 
 				<div class="uploadMembers" style="margin-top:10px;">
 					<input type="file" name="prof_pic5" ng-model="prof_pic5" placeholder="Member Picture" file-model="myFile5"/>
 					<input type="text" name="name5" ng-model="name5" placeholder="Name"/>
 					<input type="text" name="position5" ng-model="position5" placeholder="Position"/>
+					<button class="btn imageUpload" ng-click="uploadImage(4)">Upload</button>
+					{{imageError[4]}}
 				</div>
 
 				<div class="uploadMembers" style="margin-top:10px;">
 					<input type="file" name="prof_pic6" ng-model="prof_pic6" placeholder="Member Picture" file-model="myFile6"/>
 					<input type="text" name="name6" ng-model="name6" placeholder="Name"/>
 					<input type="text" name="position6" ng-model="position6" placeholder="Position"/>
+					<button class="btn imageUpload" ng-click="uploadImage(5)">Upload</button>
+					{{imageError[5]}}
 				</div>
 			</div>
 

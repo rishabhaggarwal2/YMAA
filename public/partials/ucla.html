@@ -34,11 +34,27 @@
         <div class="row graphic">
             <br>
             <p>Total Amount Fundraised:</p>
+            <div class="graph">
+                <div 
+                    class="column" 
+                    data-height="{{school.prevFunds+'%'}}">
+                    <div class="number">
+                        ${{school.prevFunds}}
+                    </div>
+                </div>
+                <div
+                    class="column"
+                    data-height="{{school.fundGoals+'%'}}">
+                    <div class="number">
+                        ${{school.fundGoals}}
+                    </div>
+                </div>
+            </div>
             <div class="legend">
                     <div class="circ" id="c1">  
-                    </div><div class="key">2015</div>
-                    <div class="circ" id="c2">  
                     </div><div class="key">2016</div>
+                    <!-- <div class="circ" id="c2">  
+                    </div><div class="key">2016</div> -->
                     <div class="circ" id="c3">  
                     </div><div class="key">2017 Goal</div>
             </div>
@@ -58,10 +74,16 @@
 
         <h1>Events</h1>
         <div class="row">
-            <center>
-            <iframe src="{{trustAsResourceUrl(school.calendar)}}" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-            <!-- <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showDate=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=tds5love9au8p12ukq590e32ls%40group.calendar.google.com&amp;color=%23B1440E&amp;ctz=America%2FLos_Angeles" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe> -->
-            </center>
+            <div class="col-xs-12 col-md-6">
+                <center>
+                <iframe src="{{trustAsResourceUrl(school.calendar)}}" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                <!-- <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showDate=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=tds5love9au8p12ukq590e32ls%40group.calendar.google.com&amp;color=%23B1440E&amp;ctz=America%2FLos_Angeles" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe> -->
+                </center>
+            </div>
+            <div class="col-xs-12 col-md-6">
+                <center>
+                <iframe scrolling="no" marginheight="0" frameborder="0" width="551" style="height: 773px;" src="http://facebookgalleria.com/gallery.php?id=nike&rows=3&margin=10&cols=2&width=170&font_size=11&title_color=fff&hide_next_back=0&share_buttons=1&shape=rectangle&frame=1"></iframe>
+                </center>
         </div>
     </div>
 </div>

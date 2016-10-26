@@ -17,28 +17,17 @@ app.config(['$routeProvider', function ($routeProvider) {
     .when("/research", {templateUrl: "../partials/research.html", controller: "PageCtrl"})
     .when("/alzheimers", {templateUrl: "../partials/alzheimers.html", controller: "PageCtrl"})
     .when("/create", {templateUrl: "../partials/create.html", controller: "CreateCtrl"})
+    .when("/verify", {templateUrl: "../partials/verify.html", controller: "VerifyCtrl"})
+    .when("/chapters", {templateUrl: "../partials/chapters.html", controller: "ChaptersCtrl"})
+    .when("/404", {templateUrl: "../partials/four.html", controller: "FourCtrl"})
     .when("/:school_name", {templateUrl: "../partials/ucla.html", controller: "ChapterCtrl"})
     // else 404
-    .when("/404", {templateUrl: "../partials/404.html", controller: "ChapterCtrl"})
 }]);
 
 /**
  * Controls the Home
  */
 app.controller('HomeCtrl', function ($scope/* $scope, $location, $http */) {
-  // console.log("Home Controller reporting for duty.");
-  // $.OrderlyTyper.options = {
-  //       rotateRamdomly    : false,
-  //       highlightSpeed    : 20,
-  //       typeSpeed         : 100,
-  //       clearDelay        : 500,
-  //       typeDelay         : 200,
-  //       clearOnHighlight  : true,
-  //       OrderlyTyperDataAttr     : 'data-OrderlyTyper-targets',
-  //       OrderlyTyperInterval     : 4000
-  //     }
-
-  // $('[data-OrderlyTyper-targets]').OrderlyTyper();
   function rotateText(){
     var text = $("[data-rotateText]").attr('data-rotateText');
     text = text.split(",");
@@ -65,6 +54,26 @@ app.controller('HomeCtrl', function ($scope/* $scope, $location, $http */) {
 /**
  * Controls all other Pages
  */
+
+ app.controller('VerifyCtrl', function ($scope, Server/* $scope, $location, $http */) {
+    Server.getListOfSchools("", function(error, resp){
+       console.log(error, resp);
+       $scope.schools = resp.data;
+     });
+ });
+
+ app.controller('ChaptersCtrl', function ($scope, Server/* $scope, $location, $http */) {
+    Server.getListOfSchools("", function(error, resp){
+       console.log(error, resp);
+       $scope.schools = resp.data;
+     });
+ });
+
+ app.controller('FourCtrl', function ($scope, Server/* $scope, $location, $http */) {
+  
+ });
+
+
 app.controller('PageCtrl', function ($scope, Server /* $scope, $location, $http */) {
   // console.log("Page Controller reporting for duty.");
   var reset = function(){
@@ -73,6 +82,7 @@ app.controller('PageCtrl', function ($scope, Server /* $scope, $location, $http 
     $scope.youthb = false;
     $scope.board = false;
     $scope.advisors = false;
+    $scope.outreach = false;
   };
 
   $scope.message = true;
@@ -102,6 +112,10 @@ app.controller('PageCtrl', function ($scope, Server /* $scope, $location, $http 
     $scope.advisors = true;
   };
 
+  $scope.outreachClick = function() {
+    reset();
+    $scope.outreach = true;
+  };
   
 
 });
@@ -120,11 +134,14 @@ app.controller('ChapterCtrl', function ($sce, $scope, $routeParams, Server/* $sc
 
   Server.getSchool($routeParams.school_name, function(error, resp){
      console.log(error, resp);
-    if (!resp.data[0]) {
+    if (!resp.data[resp.data.length - 1]) {
       window.location = "/#/404";
     } 
     else{
-      $scope.school = resp.data[0];
+      $scope.school = resp.data[resp.data.length - 1];
+      var backgroundUrl = "url('"+$scope.school.background+"')";
+      console.log(backgroundUrl);
+      $("#splashChapter").css("background",backgroundUrl);
       $scope.school.team.forEach(function(elem){
         if (!elem.prof_url) {
           elem.prof_url = "assets/images/user.png";
@@ -153,79 +170,134 @@ app.controller('ChapterCtrl', function ($sce, $scope, $routeParams, Server/* $sc
 app.controller('CreateCtrl', function ($scope, $routeParams, Server) {
   console.log("Create Controller reporting for duty.");
 
+  $scope.verifyStatus = "";
+  $scope.verified = false;
+
+  $(".verifyName").click(function(){
+      if(!$scope.name || !$scope.password)
+        return;
+
+      Server.getSchool($scope.name, function(error, resp){
+         console.log(error, resp);
+        if (!resp.data[resp.data.length - 1]) {
+          $scope.verifyStatus = "Available";
+        } 
+        else{
+          if(resp.data[resp.data.length - 1].password != $scope.password){
+            $scope.verifyStatus = "Wrong Password";
+            return;
+          }
+          $scope.verifyStatus = "Found";
+          $scope.school = resp.data[resp.data.length - 1];
+          console.log($scope.school);
+          $scope.verified = $scope.school.verified;
+          $scope.address = $scope.school.address;
+          $scope.impact = $scope.school.impact;
+
+          $scope.background = $scope.school.background;
+          $scope.state = $scope.school.state;
+          $scope.prevFunds = $scope.school.prevFunds;
+          $scope.fundGoals = $scope.school.fundGoals;
+
+          $scope.fb_link = $scope.school.fb_link;
+          $scope.instagram_link = $scope.school.instagram_link;
+          $scope.twitter_link = $scope.school.twitter_link;
+          $scope.calendar = $scope.school.calendar;
+
+          $scope.school.team.forEach(function(elem, index){
+            if (!elem.prof_url) {
+              elem.prof_url = "assets/images/user.png";
+            }
+            $scope["name"+(index+1)] = elem.name;
+            $scope["position"+(index+1)] = elem.position;
+            $scope["prof_urls"+index] = elem.prof_url;
+          });
+
+          $scope.school.news.forEach(function(elem){
+            if (!elem.image_url) {
+              elem.image_url = "assets/images/why1.png";
+            }
+          });
+        }
+      });
+  });
+
+  $scope.imageError = ["","","","","",""];
+  $scope.prof_urls = ["","","","","",""];
+
+  $scope.uploadImage = function(ind) {
+    var temp = "myFile" + (ind + 1);
+    var file = $scope[temp];
+    console.log(file);
+    var reader = new FileReader();
+    reader.onload = function(){
+      var dataURL = reader.result;
+      Server.uploadProfilePicture(dataURL, file.type, $scope.name + "-" + file.name, function(error, resp){
+          if(error) {
+            console.log("loda", error);
+            $scope.imageError[ind] = error.data;
+          } else if(resp.status == 200) {
+            $scope.imageError[ind] = "Uploaded";
+            $scope.prof_urls[ind] = "https://ymaa-content.s3-us-west-2.amazonaws.com/" + $scope.name + "-" + file.name;
+          }
+      });
+    };
+    reader.readAsDataURL(file);
+  };
+
+
   $(".createSubmit").click(function(){
     var file = $scope.myFile1;
 
     console.log('file is ' );
     console.log(file);
 
-    // Server.uploadProfilePicture(file, file.type, file.name, function(error, resp){
-    //   console.log(error, resp);
-    // });
-
-    $scope.name = "lol";
-
-    var reader = new FileReader();
-    reader.onload = function(){
-      var dataURL = reader.result;
-      Server.uploadProfilePicture(dataURL, file.type, $scope.name + file.name, function(error, resp){
-          console.log(error, resp);
-      });
-    };
-    reader.readAsDataURL(file);
-
-    //remove
-    return;
-
-    // });
-    // Server.uploadProfilePicture("http://localhost:8000/assets/images/andrew.jpg",
-    //   function(error, resp){
-    //     console.log(error, resp);
-    //   });
     var members = [];
     var news = [];
+
     if ($scope.name1) {
       members.push({
         name: $scope.name1,
         position: $scope.position1,
-        prof_url: "",
+        prof_url: $scope.prof_urls[0],
       });
     }
     if ($scope.name2) {
       members.push({
         name: $scope.name2,
         position: $scope.position2,
-        prof_url: "",
+        prof_url: $scope.prof_urls[1],
       });
     }
     if ($scope.name3) {
       members.push({
         name: $scope.name3,
         position: $scope.position3,
-        prof_url: "",
+        prof_url: $scope.prof_urls[2],
       });
     }
     if ($scope.name4) {
       members.push({
         name: $scope.name4,
         position: $scope.position4,
-        prof_url: "",
+        prof_url: $scope.prof_urls[3],
       });
     }
     if ($scope.name5) {
       members.push({
         name: $scope.name5,
         position: $scope.position5,
-        prof_url: "",
+        prof_url: $scope.prof_urls[4],
       });
     }
     if ($scope.name6) {
       members.push({
         name: $scope.name6,
         position: $scope.position6,
-        prof_url: "",
+        prof_url: $scope.prof_urls[5],
       });
     }
+
     if ($scope.title1) {
       news.push({
         title: $scope.title1,
@@ -253,10 +325,16 @@ app.controller('CreateCtrl', function ($scope, $routeParams, Server) {
 
     Server.saveSchool({
       name: $scope.name,
+      password: $scope.password,
+      verified: $scope.verified,
+      background: $scope.background,
       impact: $scope.impact,
+      prevFunds: $scope.prevFunds,
+      fundGoals: $scope.fundGoals,
       address: $scope.address,
+      state: $scope.state,
       fb_link: $scope.fb_link,
-      instagram: $scope.fb_link,
+      instagram_link: $scope.fb_link,
       twitter_link: $scope.twitter_link,
       calendar: $scope.calendar,
       team: members,
@@ -314,6 +392,14 @@ app.factory('Server', function ($http) {
   // fix push
   factory.getSchool = (schoolName, onComplete) => {
     $http.get(`/school/${schoolName}`).then((resp) => {
+      onComplete(null, resp);
+    }, (err) => {
+      onComplete(err, null);
+    });
+  };
+
+  factory.getListOfSchools = (schoolName, onComplete) => {
+    $http.get('/list_of_schools/').then((resp) => {
       onComplete(null, resp);
     }, (err) => {
       onComplete(err, null);

@@ -28,7 +28,20 @@ module.exports = {
       school.name = parameters.name
       listEntry.name = parameters.name
     }
+    if (parameters.password) school.password = parameters.password
     if (parameters.impact) school.impact = parameters.impact
+    if (parameters.verified) {
+      school.verified = parameters.verified
+      listEntry.verified = parameters.verified
+    }
+    if (parameters.background) school.background = parameters.background
+    if (parameters.prevFunds) school.prevFunds = parameters.prevFunds
+    if (parameters.fundGoals) school.fundGoals = parameters.fundGoals
+      
+    if (parameters.fb_link) school.fb_link = parameters.fb_link
+    if (parameters.instagram_link) school.instagram_link = parameters.instagram_link
+    if (parameters.twitter_link) school.twitter_link = parameters.twitter_link
+
     if (parameters.state) {
       school.state = parameters.state
       listEntry.state = parameters.state
@@ -38,11 +51,11 @@ module.exports = {
       listEntry.address = parameters.address
     }
     if (parameters.calendar) school.calendar = parameters.calendar
-    if (parameters.mediaLinks) {
-      mediaLinks.forEach((obj) => {
-        school.social_media_links.push(obj)
-      })
-    }
+    // if (parameters.mediaLinks) {
+    //   mediaLinks.forEach((obj) => {
+    //     school.social_media_links.push(obj)
+    //   })
+    // }
     if (parameters.team) school.team = parameters.team
     if (parameters.news) school.news = parameters.news
 
@@ -112,7 +125,7 @@ module.exports = {
         console.log('UPLOAD ERROR', err)
         res.status(200).send('upload file: ERROR')
       } else {
-        console.log('success nigga', resp)
+        console.log('success', resp)
         res.status(200).send(resp)
       }
     })

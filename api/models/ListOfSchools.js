@@ -13,7 +13,8 @@ const Schema = mongoose.Schema
 const listSchema = new Schema({
   name: { type: String, required: true, index: true },
   state: { type: String, required: true},
-  address: { type: String, required: true }
+  address: { type: String, required: true },
+  verified: {type: Boolean, required: false}
 })
 
 const ListOfSchools = mongoose.model('ListOfSchools', listSchema)

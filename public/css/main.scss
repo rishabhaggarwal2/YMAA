@@ -687,29 +687,78 @@ footer{
 	.graphic{
 		height: 110px;
 		background: #d3d3d3;
-	}
-	.graphic:before{
-		content:'';
-		background:url('../assets/images/money.png');
-		background-size:contain;
-		background-repeat: no-repeat;
-		width: 180px;
-		height: 300px;
-		position: absolute;
-		top: -70px;
-		left: 10%;
+		position: relative;
 		@media (max-width: $tablet) {
-			margin-left:0;
-			display: none;
+			height: auto;
 		}
 	}
+	// .graphic:before{
+	// 	content:'';
+	// 	background:url('../assets/images/money.png');
+	// 	background-size:contain;
+	// 	background-repeat: no-repeat;
+	// 	width: 180px;
+	// 	height: 300px;
+	// 	position: absolute;
+	// 	top: -70px;
+	// 	left: 10%;
+	// 	@media (max-width: $tablet) {
+	// 		margin-left:0;
+	// 		display: none;
+	// 	}
+	// }
 
 	.legend{
 		overflow-x: hidden;
-		margin-left:300px;
+		margin-left:350px;
 		@media (max-width: $tablet) {
-			margin-left:10px;
+			margin-left: 0px;
+			margin-top: 20px;
+			margin-bottom: 20px;
 		}
+	}
+
+	.graph {
+		height: 180px;
+		position: absolute;
+		bottom: 0;
+		left: 80px;
+		@media (max-width: $tablet) {
+			position: relative;
+			left:0;
+			padding-bottom: 10px;
+		}
+
+		.column {
+			width: 100px;
+			background: #662d91;
+			height: 30%;
+			display: inline-block;
+			position: absolute;
+			margin-left: 0px;
+			opacity: 0.9;
+			border-radius: 10px 10px 0px 0px;
+			bottom:0;
+			@media (max-width: $tablet) {
+				left: 8%;
+			}
+
+			.number {
+				position: relative;
+				top: -30px;
+				font-weight: 900;
+			}
+		}
+		.column:nth-child(2n) {
+			width: 100px;
+			background: #32004b;
+			height: 80%;
+			display: inline-block;
+			position: absolute;
+			margin-left: 80px;
+			bottom:0;
+		}
+
 	}
 	.circ{
 		position: relative;
@@ -978,7 +1027,7 @@ footer{
 
 #splashChapter{
 	background:url('../assets/images/ucla.jpg');
-	background-size: cover;
+	background-size: cover !important;
 	font-size:18px;
 	color: $white;
 	@include transition(0.5s);
@@ -1029,9 +1078,8 @@ footer{
 
 #chapterCalendar {
 	iframe {
-		width:80%;
+		width:100%;
 		max-width:800px;
-		height:60%;
 		max-height: 600px;
 	}
 }
@@ -1072,4 +1120,8 @@ footer{
 			width:100%;
 		}
 	}
+}
+
+.schoolListChapters {
+	
 }
