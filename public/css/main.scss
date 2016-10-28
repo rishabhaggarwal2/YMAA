@@ -102,7 +102,7 @@ a.purple:hover{
 			display:block;
 			margin: auto !important;
 			margin-bottom:0px;
-			width:80%;
+			width:100%;
 			border-radius:2px 2px 0 0;
 			padding:10px 20px;
 		}
@@ -125,7 +125,7 @@ a.purple:hover{
 			display:block;
 			margin: auto !important;
 			margin-bottom:0px;
-			width:80%;
+			width:100%;
 			border-radius:0px 0px 2px 2px;
 		}
 	}
@@ -258,6 +258,10 @@ a.purple:hover{
 .generalSection{
 	.container{
 		padding:40px;
+
+		@media (max-width: $tablet) {
+			padding: 20px 0;
+		}
 	}
 
 	h1{
@@ -554,6 +558,9 @@ footer{
 	font-weight:100;
 	font-size:14px;
 	color:#fff;
+	@media (max-width: $tablet) {
+		padding: 20px;
+	}
 	h3,h4{
 		font-weight:bold;
 	}
@@ -662,6 +669,10 @@ footer{
 		width: 80%;
 		margin: auto;
 		position: relative;
+
+		@media (max-width: $tablet) {
+			width: 95%;
+		}
 	}
 }
 
@@ -682,6 +693,10 @@ footer{
 		width: 80%;
 		margin: auto;
 		position: relative;
+
+		@media (max-width: $tablet) {
+			width: 95%;
+		}
 	}
 	
 	.graphic{
@@ -801,6 +816,10 @@ footer{
 		position: relative;
 		text-align: left;
 		font-size: 1em;
+
+		@media (max-width: $tablet) {
+			width: 95%;
+		}
 	}
 
 	.quote{
@@ -922,6 +941,11 @@ footer{
 			position: relative;
 			top: -80px;
 			line-height:1.8;
+			@media (max-width: $tablet) {
+				margin-left: -10%;
+				width: 120%;
+				padding: 20px;
+			}
 		}		
 	}
 	b {
@@ -950,17 +974,35 @@ footer{
 	padding: 60px 80px;
 	background-color: $white;
 	position:relative;
+
+	@media (max-width: $tablet) {
+		margin-left:0;
+		padding: 20px 40px;
+	}
+
 	p{
 		width: 350px;
+		@media (max-width: $tablet) {
+			width: auto;
+		}
 	}
 	.neuronPic{
 		position:absolute;
 		right:0px;
 		top:10%;
+		@media (max-width: $tablet) {
+			top:auto;
+			bottom: -20%;
+		    right: -28%;
+		    opacity: 0.3;
+		}
 	}
 	#neuron1{
 		float: right;
 		width: 400px;
+		@media (max-width: $tablet) {
+			display: none;
+		}
 	}
 	#neuron2{
 		width: 300px;
@@ -999,6 +1041,11 @@ footer{
 		text-align: left;
 		width: 300px;
 		margin-left:60%;
+
+		@media (max-width: $tablet) {
+			width: auto;
+			margin-left:0;
+		}
 	}
 }
 
@@ -1007,6 +1054,16 @@ footer{
 	text-align: left;
 	margin-top: -40px !important;
 	padding: 50px 50px;
+	
+	@media (max-width: $tablet) {
+		padding: 20px;
+	}
+
+	ul {
+		@media (max-width: $tablet) {
+			padding-left: 20px;
+		}
+	}
 	ul li {
 		color: black;
 		list-style-type: none;
@@ -1021,6 +1078,13 @@ footer{
 		height: .75em;
 		width: .75em;
 		border-radius: 50%;
+
+		@media (max-width: $tablet) {
+			left: 20px;
+		    height: 0.5em;
+		    margin-top: 8px;
+		    width: .5em;
+		}
 	}
 
 }
@@ -1181,5 +1245,17 @@ footer{
 
 	@media (min-width: $desktop) {
 		display: none;
+	}
+}
+
+.text-left-mob {
+	@media (max-width: $tablet) {
+		text-align: left;
+	}
+}
+
+.text-left-mob {
+	@media (max-width: $tablet) {
+		padding: 0 20px;
 	}
 }
