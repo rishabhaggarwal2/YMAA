@@ -70,7 +70,7 @@ app.controller('HomeCtrl', function ($scope, Server/* $scope, $location, $http *
  });
 
  app.controller('JoinCtrl', function ($scope, Server/* $scope, $location, $http */) {
-  
+
  });
 
  app.controller('ChaptersCtrl', function ($scope, Server/* $scope, $location, $http */) {
@@ -375,6 +375,17 @@ app.controller('NavCtrl', function ($scope, $location/* $scope, $location, $http
         $scope.nav = false;
     }  
   });
+
+  $("#mobileNav").slideUp(0);
+
+  $(".hamburger").click(function(){
+    $(".hamburger .fa").fadeOut(200)
+    $("#mobileNav").slideToggle(600, function() {
+      $(".hamburger .fa").toggleClass("fa-bars fa-close");
+      $(".hamburger .fa").fadeIn(200)
+    });
+  });
+
 });
 
 
