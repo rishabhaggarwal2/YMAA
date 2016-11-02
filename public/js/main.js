@@ -63,10 +63,67 @@ app.controller('HomeCtrl', function ($scope, Server/* $scope, $location, $http *
  */
 
  app.controller('VerifyCtrl', function ($scope, Server/* $scope, $location, $http */) {
+    $scope.password = false;
+    $scope.passkey = "fsdf";
+
     Server.getListOfSchools("", function(error, resp){
        console.log(error, resp);
-       $scope.schools = resp.data;
+       var schools = resp.data;
+       $scope.schools = [];
+       for (var i = schools.length-1; i >= 0; i--) {
+        var tempSchools = jQuery.grep($scope.schools, function(school) {
+          if(school) {
+            return school.name == schools[i].name;
+          }
+          return false;
+        })
+
+        if (!tempSchools.length) {
+          $scope.schools.push(schools[i]);
+        }
+       }
+
+       console.log($scope.schools);
+
+       for (var i = 0; i < $scope.schools.length; i++) {
+          if($scope.schools[i].verified && $scope.schools[i].verified == "true") {
+            $scope.schools[i].verified = true;
+          } else {
+            $scope.schools[i].verified = false;
+          }  
+       }
+
+       console.log($scope.schools);
+
      });
+
+    $scope.check = function(passkey) {
+      console.log("chut", passkey, "loda");
+      if(passkey == "ymaaendalz") {
+        $scope.password = true;
+        console.log("mazaa");
+      }
+    };
+
+    $(".schoolVerifyForm").on("click", "#verifyButton", function(){
+      var name = $(this).attr("data-name");
+      console.log($(this).attr("data-name"));
+      Server.getSchool(name, function(error, resp){
+        var school = resp.data[resp.data.length - 1];
+        
+        if(school.verified && school.verified == "true") {
+          school.verified = "false";
+        } else {
+          school.verified = "true";
+        }
+
+        Server.saveSchool(school, function(error, resp){
+          console.log(error, resp);
+          location.reload();
+        });
+
+      });
+    })
  });
 
  app.controller('JoinCtrl', function ($scope, Server/* $scope, $location, $http */) {
@@ -76,7 +133,20 @@ app.controller('HomeCtrl', function ($scope, Server/* $scope, $location, $http *
  app.controller('ChaptersCtrl', function ($scope, Server/* $scope, $location, $http */) {
     Server.getListOfSchools("", function(error, resp){
        console.log(error, resp);
-       $scope.schools = resp.data;
+       var schools = resp.data;
+       $scope.schools = [];
+       for (var i = schools.length; i >= 0; i--) {
+        var tempSchools = jQuery.grep($scope.schools, function(school) {
+          if(school) {
+            return school.name == schools[i].name;
+          }
+          return false;
+        })
+        if (!tempSchools.length) {
+          $scope.schools.push(schools[i]);
+        }
+
+       }
      });
  });
 
@@ -150,6 +220,9 @@ app.controller('ChapterCtrl', function ($sce, $scope, $routeParams, Server/* $sc
     } 
     else{
       $scope.school = resp.data[resp.data.length - 1];
+      if($scope.school.verified == "false") {
+        window.location = "/#/404";  
+      }
       var backgroundUrl = "url('"+$scope.school.background+"')";
       console.log(backgroundUrl);
       $("#splashChapter").css("background",backgroundUrl);
@@ -182,7 +255,7 @@ app.controller('CreateCtrl', function ($scope, $routeParams, Server) {
   console.log("Create Controller reporting for duty.");
 
   $scope.verifyStatus = "";
-  $scope.verified = false;
+  $scope.verified = "false";
 
   $(".verifyName").click(function(){
       if(!$scope.name || !$scope.password)
@@ -202,6 +275,10 @@ app.controller('CreateCtrl', function ($scope, $routeParams, Server) {
           $scope.school = resp.data[resp.data.length - 1];
           console.log($scope.school);
           $scope.verified = $scope.school.verified;
+
+          if(!$scope.verified) {
+            $scope.verified = "false";
+          }
           $scope.address = $scope.school.address;
           $scope.impact = $scope.school.impact;
 

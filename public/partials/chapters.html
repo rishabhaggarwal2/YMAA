@@ -22,7 +22,8 @@
 
 			<div 
 				class="row schoolListChapters"
-				ng-repeat="school in schools">
+				ng-repeat="school in schools"
+				ng-if="school.verified && school.verified == 'true'">
 				<div>
 				<a ng-href="#/{{school.name}}"><h3>
 					{{school.name}}

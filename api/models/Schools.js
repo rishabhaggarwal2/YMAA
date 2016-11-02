@@ -25,7 +25,7 @@ const Schema = mongoose.Schema
 const schoolSchema = new Schema({
   name: { type: String, required: true, index: true },
   password: { type: String, required: true},  //
-  verified: { type: Boolean, required: false},  //
+  verified: { type: String, required: false},  //
   background: { type: String, required: false}, //
   impact: { type: String, required: false },
   prevFunds: { type: String, required: false },
