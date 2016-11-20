@@ -21,6 +21,7 @@ app.config(['$routeProvider', function ($routeProvider) {
     .when("/verify", {templateUrl: "../partials/verify.html", controller: "VerifyCtrl"})
     .when("/chapters", {templateUrl: "../partials/chapters.html", controller: "ChaptersCtrl"})
     .when("/404", {templateUrl: "../partials/four.html", controller: "FourCtrl"})
+    .when("/map", {templateUrl: "../partials/four.html", controller: "TempCtrl"})
     .when("/:school_name", {templateUrl: "../partials/ucla.html", controller: "ChapterCtrl"})
     // else 404
 }]);
@@ -152,6 +153,10 @@ app.controller('HomeCtrl', function ($scope, Server/* $scope, $location, $http *
 
  app.controller('FourCtrl', function ($scope, Server/* $scope, $location, $http */) {
   
+ });
+
+ app.controller('TempCtrl', function ($scope, Server/* $scope, $location, $http */) {
+    window.location.assign("https://drive.google.com/open?id=1i9yAEOND7s_J3eYOqNjevy_36y4&usp=sharing")
  });
 
 
