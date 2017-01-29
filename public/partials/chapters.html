@@ -1,40 +1,36 @@
 <div id="splashChapter">
-    <div class="overlay container-fluid">
-        <div class="container text-center">
-            <div class="row">
-                <h1>YMAA Chapters</h1>                
-            </div>
-            <!-- <div class="row chapterSocials">
-                <a href="{{school.fb_link}}"><i class="fa fa-facebook"></i></a>
-                <a href="{{school.instagram_link}}"><i class="fa fa-instagram"></i></a>
-                <a href="{{school.twitter_link}}"><i class="fa fa-twitter"></i></a>
-            </div>  -->
-        </div>
-    </div>
+	<div class="overlay container-fluid">
+		<div class="container text-center">
+			<div class="row">
+				<h1>YMAA Chapters</h1>
+				<h2>Page under construction</h2>
+			</div>
+			<!-- <div class="row chapterSocials">
+				<a href="{{school.fb_link}}"><i class="fa fa-facebook"></i></a>
+				<a href="{{school.instagram_link}}"><i class="fa fa-instagram"></i></a>
+				<a href="{{school.twitter_link}}"><i class="fa fa-twitter"></i></a>
+			</div>  -->
+		</div>
+	</div>
 </div>
-
-
 <div class="container-fluid generalSection lightSection text-center" id="form">
 	<div class="container" style="text-align:left;">
-			<!-- <div class="row">
+		<!-- <div class="row">
 				<h1>Verify Schools</h1>
-			</div> -->
-
-			<div 
-				class="row schoolListChapters"
-				ng-repeat="school in schools"
-				ng-if="school.verified && school.verified == 'true'">
-				<div>
+		</div> -->
+		<div
+			class="row schoolListChapters"
+			ng-repeat="school in schools"
+			ng-if="school.verified && school.verified == 'true'">
+			<div>
 				<a ng-href="#/{{school.name}}"><h3>
 					{{school.name}}
 				</h3></a>
-
 				<p>
 					{{school.state}}
-				<p>
+					<p>
+					</div>
 				</div>
-			</div>
-
-		</form>
+			</form>
+		</div>
 	</div>
-</div>
