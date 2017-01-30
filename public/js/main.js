@@ -311,6 +311,9 @@ app.controller('CreateCtrl', function ($scope, $routeParams, Server) {
             if (!elem.image_url) {
               elem.image_url = "assets/images/why1.png";
             }
+            $scope["title"+(index+1)] = elem.title;
+            $scope["date"+(index+1)] = elem.date;
+            $scope["article_url"+(index+1)] = elem.article_url;
           });
         }
       });
