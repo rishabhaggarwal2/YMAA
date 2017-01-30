@@ -68,55 +68,55 @@
 			<div class="row" style="margin-top:20px;">
 				<label>Members</label><br>
 				<div class="uploadMembers" style="margin-top:10px;">
-					<img ng-src="$scope.prof_urls[0]" ng-show="$scope.prof_urls[0]">
 					<input type="file" name="prof_pic1" ng-model="prof_pic1" placeholder="Member Picture" file-model="myFile1" class="lol"/>
 					<input type="text" name="name1" ng-model="name1" placeholder="Name"/>
 					<input type="text" name="position1" ng-model="position1" placeholder="Position"/>
+					<label>{{$scope.prof_urls[0]}}</label>
 					<button class="btn imageUpload" ng-click="uploadImage(0)">Upload</button>
 					{{imageError[0]}}
 				</div>
 
 				<div class="uploadMembers" style="margin-top:10px;">
-					<img ng-src="$scope.prof_urls[1]" ng-show="$scope.prof_urls[1]">
 					<input type="file" name="prof_pic2" ng-model="prof_pic2" placeholder="Member Picture" file-model="myFile2"/>
 					<input type="text" name="name2" ng-model="name2" placeholder="Name"/>
 					<input type="text" name="position2" ng-model="position2" placeholder="Position"/>
+					<label>{{$scope.prof_urls[1]}}</label>
 					<button class="btn imageUpload" ng-click="uploadImage(1)">Upload</button>
 					{{imageError[1]}}
 				</div>
 
 				<div class="uploadMembers" style="margin-top:10px;">
-					<img ng-src="$scope.prof_urls[2]" ng-show="$scope.prof_urls[2]">
 					<input type="file" name="prof_pic3" ng-model="prof_pic3" placeholder="Member Picture" file-model="myFile3"/>
 					<input type="text" name="name3" ng-model="name3" placeholder="Name"/>
 					<input type="text" name="position3" ng-model="position3" placeholder="Position"/>
+					<label>{{$scope.prof_urls[2]}}</label>
 					<button class="btn imageUpload" ng-click="uploadImage(2)">Upload</button>
 					{{imageError[2]}}
 				</div>
 
 				<div class="uploadMembers" style="margin-top:10px;">
-					<img ng-src="$scope.prof_urls[3]" ng-show="$scope.prof_urls[3]">
 					<input type="file" name="prof_pic4" ng-model="prof_pic4" placeholder="Member Picture" file-model="myFile4"/>
 					<input type="text" name="name4" ng-model="name4" placeholder="Name"/>
 					<input type="text" name="position4" ng-model="position4" placeholder="Position"/>
+					<label>{{$scope.prof_urls[3]}}</label>
 					<button class="btn imageUpload" ng-click="uploadImage(3)">Upload</button>
 					{{imageError[3]}}
 				</div>
 
 				<div class="uploadMembers" style="margin-top:10px;">
-					<img ng-src="$scope.prof_urls[4]" ng-show="$scope.prof_urls[4]">
 					<input type="file" name="prof_pic5" ng-model="prof_pic5" placeholder="Member Picture" file-model="myFile5"/>
 					<input type="text" name="name5" ng-model="name5" placeholder="Name"/>
 					<input type="text" name="position5" ng-model="position5" placeholder="Position"/>
+					<label>{{$scope.prof_urls[4]}}</label>
 					<button class="btn imageUpload" ng-click="uploadImage(4)">Upload</button>
 					{{imageError[4]}}
 				</div>
 
 				<div class="uploadMembers" style="margin-top:10px;">
-					<img ng-src="$scope.prof_urls[5]" ng-show="$scope.prof_urls[5]">
 					<input type="file" name="prof_pic6" ng-model="prof_pic6" placeholder="Member Picture" file-model="myFile6"/>
 					<input type="text" name="name6" ng-model="name6" placeholder="Name"/>
 					<input type="text" name="position6" ng-model="position6" placeholder="Position"/>
+					<label>{{$scope.prof_urls[5]}}</label>
 					<button class="btn imageUpload" ng-click="uploadImage(5)">Upload</button>
 					{{imageError[5]}}
 				</div>
