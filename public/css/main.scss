@@ -1269,3 +1269,18 @@ footer{
 		width: 80px;
 	}
 }
+
+.chapterEventsContainer {
+	width: 100%;
+	display: flex;
+    justify-content: center;
+}
+
+.chapterEvents {
+	width: 50%;
+	padding: 0 10px;
+
+	@media (max-width: $tablet) {
+		width: 100%;
+	}
+}
