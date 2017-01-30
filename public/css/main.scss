@@ -840,7 +840,7 @@ footer{
 		overflow: hidden;
 		width: 200px;
 		img{
-			width: 200px;
+			// width: 200px;
 			height: 200px;
 		}
 		.name{
@@ -1182,6 +1182,10 @@ footer{
 		text-align:left;
 		@media (max-width: $tablet) {
 			width:100%;
+		}
+
+		:hover {
+			font-weight:600;
 		}
 	}
 }

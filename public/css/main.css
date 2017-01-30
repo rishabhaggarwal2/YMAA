@@ -658,7 +658,6 @@ footer {
   overflow: hidden;
   width: 200px; }
   .board .member img {
-    width: 200px;
     height: 200px; }
   .board .member .name {
     margin-top: 10px;
@@ -936,6 +935,8 @@ footer {
     @media (max-width: 767px) {
       .boardMember .description {
         width: 100%; } }
+    .boardMember .description :hover {
+      font-weight: 600; }
 
 .joinTheMovement a {
   text-transform: none !important;
