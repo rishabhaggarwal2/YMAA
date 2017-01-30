@@ -1274,6 +1274,10 @@ footer{
 	width: 100%;
 	display: flex;
     justify-content: center;
+
+    @media (max-width: $tablet) {
+    	flex-wrap: wrap;
+    }
 }
 
 .chapterEvents {

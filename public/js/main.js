@@ -440,6 +440,13 @@ app.controller('CreateCtrl', function ($scope, $routeParams, Server) {
       news: news,
     }, function(error, resp){
       console.log(error, resp);
+      if(!error) {
+        if(resp.status == 200) {
+          window.alert("School info updated");
+        }
+      } else {
+        window.alert("Error processing info. Please try again later.");
+      }
     });
   });
 });

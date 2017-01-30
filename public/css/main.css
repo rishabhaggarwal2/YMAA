@@ -1000,6 +1000,9 @@ footer {
   width: 100%;
   display: flex;
   justify-content: center; }
+  @media (max-width: 767px) {
+    .chapterEventsContainer {
+      flex-wrap: wrap; } }
 
 .chapterEvents {
   width: 50%;
