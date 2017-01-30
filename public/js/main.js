@@ -307,7 +307,7 @@ app.controller('CreateCtrl', function ($scope, $routeParams, Server) {
             $scope.prof_urls[index] = elem.prof_url;
           });
 
-          $scope.school.news.forEach(function(elem){
+          $scope.school.news.forEach(function(elem, index){
             if (!elem.image_url) {
               elem.image_url = "assets/images/why1.png";
             }
