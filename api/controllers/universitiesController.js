@@ -51,6 +51,7 @@ module.exports = {
       listEntry.address = parameters.address
     }
     if (parameters.calendar) school.calendar = parameters.calendar
+    if (parameters.galleria) school.galleria = parameters.galleria
     // if (parameters.mediaLinks) {
     //   mediaLinks.forEach((obj) => {
     //     school.social_media_links.push(obj)

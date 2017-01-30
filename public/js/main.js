@@ -297,6 +297,7 @@ app.controller('CreateCtrl', function ($scope, $routeParams, Server) {
           $scope.instagram_link = $scope.school.instagram_link;
           $scope.twitter_link = $scope.school.twitter_link;
           $scope.calendar = $scope.school.calendar;
+          $scope.galleria = $scope.school.galleria;
 
           $scope.school.team.forEach(function(elem, index){
             if (!elem.prof_url) {
@@ -434,6 +435,7 @@ app.controller('CreateCtrl', function ($scope, $routeParams, Server) {
       instagram_link: $scope.fb_link,
       twitter_link: $scope.twitter_link,
       calendar: $scope.calendar,
+      galleria: $scope.galleria,
       team: members,
       news: news,
     }, function(error, resp){

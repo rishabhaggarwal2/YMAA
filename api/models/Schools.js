@@ -33,6 +33,7 @@ const schoolSchema = new Schema({
   address: { type: String, required: true },
   state: { type: String, required: true },
   calendar: { type: String, required: false },
+  galleria: { type: String, required: false },
   fb_link: { type: String, required: false },
   twitter_link: { type: String, required: false },
   instagram_link: { type: String, required: false },
