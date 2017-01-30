@@ -303,8 +303,8 @@ app.controller('CreateCtrl', function ($scope, $routeParams, Server) {
               elem.prof_url = "assets/images/user.png";
             }
             $scope["name"+(index+1)] = elem.name;
-            $scope["position"+(index+1)] = elem.position;
-            $scope["prof_urls"+index] = elem.prof_url;
+            $scope.position[(index+1)] = elem.position;
+            $scope.prof_urls[index] = elem.prof_url;
           });
 
           $scope.school.news.forEach(function(elem){
