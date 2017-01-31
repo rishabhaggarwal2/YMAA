@@ -20,9 +20,9 @@
 <div class="sub-nav">
     <div class="sub_navbar">
         <div class="line"><a data-href="#impact">OUR IMPACT</a></div>
-        <div class="line"><a data-href="#chapterCalendar">Events</a></div>
+        <div class="line" ng-show="school.calendar || school.galleria"><a ng-show="school.calendar || school.galleria" data-href="#chapterCalendar">Events</a></div>
         <div class="line"><a data-href="#leadership">Leadership</a></div>
-        <div class="line"><a data-href="#news">In the News</a></div>
+        <div class="line" ng-show="school.news"><a ng-show="school.news" data-href="#news">In the News</a></div>
     </div>
 </div>
 
