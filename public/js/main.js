@@ -395,13 +395,55 @@ app.controller('CreateCtrl', function ($scope, $routeParams, Server) {
         prof_url: $scope.prof_urls[5],
       });
     }
+    if ($scope.name7) {
+      members.push({
+        name: $scope.name7,
+        position: $scope.position7,
+        prof_url: $scope.prof_urls[6],
+      });
+    }
+    if ($scope.name8) {
+      members.push({
+        name: $scope.name8,
+        position: $scope.position8,
+        prof_url: $scope.prof_urls[7],
+      });
+    }
+    if ($scope.name9) {
+      members.push({
+        name: $scope.name9,
+        position: $scope.position9,
+        prof_url: $scope.prof_urls[8],
+      });
+    }
+    if ($scope.name10) {
+      members.push({
+        name: $scope.name10,
+        position: $scope.position10,
+        prof_url: $scope.prof_urls[9],
+      });
+    }
+    if ($scope.name11) {
+      members.push({
+        name: $scope.name11,
+        position: $scope.position11,
+        prof_url: $scope.prof_urls[10],
+      });
+    }
+    if ($scope.name12) {
+      members.push({
+        name: $scope.name12,
+        position: $scope.position12,
+        prof_url: $scope.prof_urls[11],
+      });
+    }
 
     if ($scope.title1) {
       news.push({
         title: $scope.title1,
         date: $scope.date1,
         article_url: $scope.article_url1,
-        image_url: "",
+        image_url: $scope.image_url1,
       });
     }
     if ($scope.title2) {
@@ -409,7 +451,7 @@ app.controller('CreateCtrl', function ($scope, $routeParams, Server) {
         title: $scope.title2,
         date: $scope.date2,
         article_url: $scope.article_url2,
-        image_url: "",
+        image_url: $scope.image_url2,
       });
     }
     if ($scope.title3) {
@@ -417,7 +459,7 @@ app.controller('CreateCtrl', function ($scope, $routeParams, Server) {
         title: $scope.title3,
         date: $scope.date3,
         article_url: $scope.article_url3,
-        image_url: "",
+        image_url: $scope.image_url3,
       });
     }
 

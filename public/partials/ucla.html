@@ -99,7 +99,7 @@
         <br>
         <div class="row">
 
-            <div class="member" ng-repeat="member in school.team">
+            <div class="member" ng-repeat="member in school.team" ng-show="member.name">
                 <!-- <a href="https://www.linkedin.com"><i class="fa fa-linkedin-square fa-2x icon" aria-hidden="true"></i></a> -->
                 <img ng-src="{{member.prof_url}}">
                 <p class="name">{{member.name}}</p>
