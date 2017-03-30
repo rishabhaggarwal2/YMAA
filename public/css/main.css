@@ -948,11 +948,12 @@ footer {
 
 table {
   width:100%;
+  position:relative;
 }
 table td {
   padding:20px;
 }
-@media screen and (max-width: 767px) {
+@media (max-width: 767px) {
   table {width:100%;}
   table td {display: block;  text-align:center;}
   table td:before{
