@@ -946,6 +946,14 @@ footer {
     max-height: 300px;
 }
 
+table {width:100%;}
+@media screen and (max-width: 640px) {
+  table td:before{
+    content: attr(data-th); 
+    display: block;
+  }
+}
+
 .joinTheMovement a {
   text-transform: none !important;
   font-size: 1em !important;
