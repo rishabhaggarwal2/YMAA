@@ -946,11 +946,6 @@ footer {
     max-height: 300px;
 }
 
-@media (max-width: 767px) {
-  table { 
-width: 100%;
-display:block; }}
-
 .joinTheMovement a {
   text-transform: none !important;
   font-size: 1em !important;
