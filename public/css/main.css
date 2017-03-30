@@ -946,6 +946,7 @@ footer {
     max-height: 300px;
 }
 
+table { table-layout:fixed }
 
 .joinTheMovement a {
   text-transform: none !important;
