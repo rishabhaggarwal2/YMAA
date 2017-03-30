@@ -947,7 +947,9 @@ footer {
 }
 
 table {width:100%;}
-@media screen and (max-width: 640px) {
+@media (max-width: 767px) {
+  table {width:100%;}
+  table td {display: block;  text-align:center;}
   table td:before{
     content: attr(data-th); 
     display: block;
