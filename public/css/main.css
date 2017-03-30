@@ -946,7 +946,9 @@ footer {
     max-height: 300px;
 }
 
-table { width: 100% }
+table { 
+width: 100%;
+display:block; }
 
 .joinTheMovement a {
   text-transform: none !important;
