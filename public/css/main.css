@@ -938,6 +938,11 @@ footer {
     .boardMember .description :hover {
       font-weight: 600; }
 
+.teamMember{
+  border-radius: 50%;
+}
+
+
 .joinTheMovement a {
   text-transform: none !important;
   font-size: 1em !important;
