@@ -938,7 +938,7 @@ footer {
     .boardMember .description :hover {
       font-weight: 600; }
 
-.teamMember{
+.teamMember .imageName img {
   border-radius: 50%;
 }
 
