@@ -169,7 +169,7 @@ app.controller('PageCtrl', function ($scope, Server /* $scope, $location, $http 
     $scope.youthb = false;
     $scope.board = false;
     $scope.advisors = false;
-    //$scope.outreach = false;
+    $scope.honorboard = false;
   };
 
   $scope.message = true;
@@ -199,10 +199,10 @@ app.controller('PageCtrl', function ($scope, Server /* $scope, $location, $http 
     $scope.advisors = true;
   };
 
-  /*$scope.outreachClick = function() {
+  $scope.hbClick = function() {
     reset();
-    $scope.outreach = true;
-  };*/
+    $scope.honorboard = true;
+  };
   
 
 });
