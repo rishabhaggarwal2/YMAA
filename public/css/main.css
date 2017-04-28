@@ -938,24 +938,17 @@ footer {
     .boardMember .description :hover {
       font-weight: 600; }
 
-.teamMember .imageName {
-   border-radius: 50%;
-                overflow: hidden;
-                width: 200px;
-                height: 200px;
-}
+    
+.teamMember .imageName{
+max-width: 300px; 
+    max-height: 300px;
+  }
+
 .teamMember .imageName img {
-  /*border-radius: 50%;
-    height: auto; 
+  border-radius: 50%;
+  height: auto; 
     width: auto; 
-    max-width: 300px; 
-    max-height: 300px;*/
-    display: block;
-            /* Stretch 
-                  height: 100%;
-                  width: 100%; */
-            min-width: 100%;
-            min-height: 100%;
+    
 }
 
 table {
