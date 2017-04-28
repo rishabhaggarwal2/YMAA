@@ -938,18 +938,16 @@ footer {
     .boardMember .description :hover {
       font-weight: 600; }
 
-
-.teamMember .imageName{
-max-width: 200px; 
-    max-height: 200px;
-  }
+.teamMember {
+  padding: 20px;
+}
 
 .teamMember .imageName img {
   border-radius: 50%;
   height: auto; 
     width: auto;
     max-width: 200px; 
-    max-height: 200px; 
+    max-height: 20m0px; 
     
 }
 
