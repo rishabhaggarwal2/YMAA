@@ -1039,4 +1039,9 @@ table td {
     .chapterEvents {
       width: 100%; } }
 
+#mc_embed_signup {
+  width: 50%;
+  margin: 0 auto;
+}
+
 /*# sourceMappingURL=main.css.map */
