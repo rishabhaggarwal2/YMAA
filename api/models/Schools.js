@@ -30,14 +30,16 @@ const schoolSchema = new Schema({
   impact: { type: String, required: false },
   prevFunds: { type: String, required: false },
   fundGoals: { type: String, required: false },
+  schoolNumber: { type: String, required: false },
   address: { type: String, required: true },
   state: { type: String, required: true },
   calendar: { type: String, required: false },
+  insta_galleria: { type: String, required: false },
   galleria: { type: String, required: false },
   fb_link: { type: String, required: false },
   twitter_link: { type: String, required: false },
   instagram_link: { type: String, required: false },
-  team: [{ name: String, position: String, prof_url: String, required: false }],
+  team: [{ name: String, position: String, about: String, link: String, prof_url: String, required: false }],
   news: [{ title: String, date: String, article_url: String, image_url: String, required: false }]
 })
 

@@ -37,6 +37,7 @@ module.exports = {
     if (parameters.background) school.background = parameters.background
     if (parameters.prevFunds) school.prevFunds = parameters.prevFunds
     if (parameters.fundGoals) school.fundGoals = parameters.fundGoals
+    if (parameters.schoolNumber) school.schoolNumber = parameters.schoolNumber
       
     if (parameters.fb_link) school.fb_link = parameters.fb_link
     if (parameters.instagram_link) school.instagram_link = parameters.instagram_link
@@ -51,6 +52,7 @@ module.exports = {
       listEntry.address = parameters.address
     }
     if (parameters.calendar) school.calendar = parameters.calendar
+    if (parameters.insta_galleria) school.insta_galleria = parameters.insta_galleria
     if (parameters.galleria) school.galleria = parameters.galleria
     // if (parameters.mediaLinks) {
     //   mediaLinks.forEach((obj) => {

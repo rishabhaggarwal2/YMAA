@@ -100,7 +100,7 @@ app.controller('HomeCtrl', function ($scope, Server/* $scope, $location, $http *
      });
 
     $scope.check = function(passkey) {
-      console.log("chut", passkey, "loda");
+      console.log("", passkey, "");
       if(passkey == "ymaaendalz") {
         $scope.password = true;
         console.log("mazaa");
@@ -298,12 +298,14 @@ app.controller('CreateCtrl', function ($scope, $routeParams, Server) {
           $scope.state = $scope.school.state;
           $scope.prevFunds = $scope.school.prevFunds;
           $scope.fundGoals = $scope.school.fundGoals;
+          $scope.schoolNumber = $scope.school.schoolNumber;
 
           $scope.fb_link = $scope.school.fb_link;
           $scope.instagram_link = $scope.school.instagram_link;
           $scope.twitter_link = $scope.school.twitter_link;
           $scope.calendar = $scope.school.calendar;
           $scope.galleria = $scope.school.galleria;
+          $scope.insta_galleria = $scope.school.insta_galleria;
 
           $scope.school.team.forEach(function(elem, index){
             if (!elem.prof_url) {
@@ -311,6 +313,8 @@ app.controller('CreateCtrl', function ($scope, $routeParams, Server) {
             }
             $scope["name"+(index+1)] = elem.name;
             $scope["position"+(index+1)] = elem.position;
+            $scope["about"+(index+1)] = elem.about;
+            $scope["link"+(index+1)] = elem.link;
             $scope.prof_urls[index] = elem.prof_url;
           });
 
@@ -326,8 +330,8 @@ app.controller('CreateCtrl', function ($scope, $routeParams, Server) {
       });
   });
 
-  $scope.imageError = ["","","","","",""];
-  $scope.prof_urls = ["","","","","",""];
+  $scope.imageError = ["","","","","","","","","","","",""];
+  $scope.prof_urls = ["","","","","","","","","","","",""];
 
   $scope.uploadImage = function(ind) {
     var temp = "myFile" + (ind + 1);
@@ -364,6 +368,8 @@ app.controller('CreateCtrl', function ($scope, $routeParams, Server) {
         name: $scope.name1,
         position: $scope.position1,
         prof_url: $scope.prof_urls[0],
+        about: $scope.about1,
+        link: $scope.link1,
       });
     }
     if ($scope.name2) {
@@ -371,6 +377,8 @@ app.controller('CreateCtrl', function ($scope, $routeParams, Server) {
         name: $scope.name2,
         position: $scope.position2,
         prof_url: $scope.prof_urls[1],
+        about: $scope.about2,
+        link: $scope.link2,
       });
     }
     if ($scope.name3) {
@@ -378,6 +386,8 @@ app.controller('CreateCtrl', function ($scope, $routeParams, Server) {
         name: $scope.name3,
         position: $scope.position3,
         prof_url: $scope.prof_urls[2],
+        about: $scope.about3,
+        link: $scope.link3,
       });
     }
     if ($scope.name4) {
@@ -385,6 +395,8 @@ app.controller('CreateCtrl', function ($scope, $routeParams, Server) {
         name: $scope.name4,
         position: $scope.position4,
         prof_url: $scope.prof_urls[3],
+        about: $scope.about4,
+        link: $scope.link4,
       });
     }
     if ($scope.name5) {
@@ -392,6 +404,8 @@ app.controller('CreateCtrl', function ($scope, $routeParams, Server) {
         name: $scope.name5,
         position: $scope.position5,
         prof_url: $scope.prof_urls[4],
+        about: $scope.about5,
+        link: $scope.link5,
       });
     }
     if ($scope.name6) {
@@ -399,6 +413,8 @@ app.controller('CreateCtrl', function ($scope, $routeParams, Server) {
         name: $scope.name6,
         position: $scope.position6,
         prof_url: $scope.prof_urls[5],
+        about: $scope.about6,
+        link: $scope.link6,
       });
     }
     if ($scope.name7) {
@@ -406,6 +422,8 @@ app.controller('CreateCtrl', function ($scope, $routeParams, Server) {
         name: $scope.name7,
         position: $scope.position7,
         prof_url: $scope.prof_urls[6],
+        about: $scope.about7,
+        link: $scope.link7,
       });
     }
     if ($scope.name8) {
@@ -413,6 +431,8 @@ app.controller('CreateCtrl', function ($scope, $routeParams, Server) {
         name: $scope.name8,
         position: $scope.position8,
         prof_url: $scope.prof_urls[7],
+        about: $scope.about8,
+        link: $scope.link8,
       });
     }
     if ($scope.name9) {
@@ -420,6 +440,8 @@ app.controller('CreateCtrl', function ($scope, $routeParams, Server) {
         name: $scope.name9,
         position: $scope.position9,
         prof_url: $scope.prof_urls[8],
+        about: $scope.about9,
+        link: $scope.link9,
       });
     }
     if ($scope.name10) {
@@ -427,6 +449,8 @@ app.controller('CreateCtrl', function ($scope, $routeParams, Server) {
         name: $scope.name10,
         position: $scope.position10,
         prof_url: $scope.prof_urls[9],
+        about: $scope.about10,
+        link: $scope.link10,
       });
     }
     if ($scope.name11) {
@@ -434,6 +458,8 @@ app.controller('CreateCtrl', function ($scope, $routeParams, Server) {
         name: $scope.name11,
         position: $scope.position11,
         prof_url: $scope.prof_urls[10],
+        about: $scope.about11,
+        link: $scope.link11,
       });
     }
     if ($scope.name12) {
@@ -441,6 +467,8 @@ app.controller('CreateCtrl', function ($scope, $routeParams, Server) {
         name: $scope.name12,
         position: $scope.position12,
         prof_url: $scope.prof_urls[11],
+        about: $scope.about12,
+        link: $scope.link12,
       });
     }
 
@@ -477,12 +505,14 @@ app.controller('CreateCtrl', function ($scope, $routeParams, Server) {
       impact: $scope.impact,
       prevFunds: $scope.prevFunds,
       fundGoals: $scope.fundGoals,
+      schoolNumber: $scope.schoolNumber,
       address: $scope.address,
       state: $scope.state,
       fb_link: $scope.fb_link,
       instagram_link: $scope.fb_link,
       twitter_link: $scope.twitter_link,
       calendar: $scope.calendar,
+      insta_galleria: $scope.insta_galleria,
       galleria: $scope.galleria,
       team: members,
       news: news,

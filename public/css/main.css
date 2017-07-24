@@ -1033,7 +1033,7 @@ table td {
       flex-wrap: wrap; } }
 
 .chapterEvents {
-  width: 50%;
+  width: 100%;
   padding: 0 10px; }
   @media (max-width: 767px) {
     .chapterEvents {
