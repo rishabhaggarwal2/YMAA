@@ -1044,4 +1044,26 @@ table td {
   margin: 0 auto;
 }
 
+#form input, #form textarea{
+  border: none;
+  outline: 0;
+  background: transparent;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0px;
+  /* width: 600px; */
+  margin-bottom: 20px;
+}
+
+#form textarea { 
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+#form input:focus {
+  border-bottom: 1px solid #000;
+}
+
+#form textarea:focus { 
+  border: 1px solid #000;
+}
 /*# sourceMappingURL=main.css.map */
