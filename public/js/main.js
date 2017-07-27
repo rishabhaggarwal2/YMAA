@@ -170,7 +170,7 @@ app.controller('PageCtrl', function ($scope, Server /* $scope, $location, $http 
     $scope.board = false;
     $scope.advisors = false;
     $scope.honorboard = false;
-    //$scope.friends = false;
+    $scope.friends = false;
   };
 
   $scope.message = true;
@@ -205,10 +205,10 @@ app.controller('PageCtrl', function ($scope, Server /* $scope, $location, $http 
     $scope.honorboard = true;
   };
 
-   /*$scope.friendsClick = function() {
+   $scope.friendsClick = function() {
     reset();
     $scope.friends = true;
-  };*/
+  };
   
 
 });
