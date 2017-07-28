@@ -24,6 +24,7 @@ app.config(['$routeProvider', function ($routeProvider) {
     .when("/404", {templateUrl: "../partials/four.html", controller: "FourCtrl"})
     .when("/map", {templateUrl: "../partials/four.html", controller: "TempCtrl"})
     .when("/:school_name", {templateUrl: "../partials/ucla.html", controller: "ChapterCtrl"})
+    .when("/start", {templateUrl: "../partials/start.html", controller: "StartCtrl"})
     // else 404
 }]);
 
@@ -129,6 +130,10 @@ app.controller('HomeCtrl', function ($scope, Server/* $scope, $location, $http *
  });
 
  app.controller('JoinCtrl', function ($scope, Server/* $scope, $location, $http */) {
+
+ });
+
+app.controller('StartCtrl', function ($scope, Server/* $scope, $location, $http */) {
 
  });
 
