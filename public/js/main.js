@@ -23,8 +23,10 @@ app.config(['$routeProvider', function ($routeProvider) {
     .when("/chapters", {templateUrl: "../partials/chapters.html", controller: "ChaptersCtrl"})
     .when("/404", {templateUrl: "../partials/four.html", controller: "FourCtrl"})
     .when("/map", {templateUrl: "../partials/four.html", controller: "TempCtrl"})
+    .when("/startAChapter", {templateUrl: "../partials/startAChapter.html", controller: "PageCtrl"})
+
     .when("/:school_name", {templateUrl: "../partials/ucla.html", controller: "ChapterCtrl"})
-    .when("/start", {templateUrl: "../partials/start.html", controller: "StartCtrl"})
+
     // else 404
 }]);
 
@@ -133,9 +135,6 @@ app.controller('HomeCtrl', function ($scope, Server/* $scope, $location, $http *
 
  });
 
-app.controller('StartCtrl', function ($scope, Server/* $scope, $location, $http */) {
-
- });
 
  app.controller('ChaptersCtrl', function ($scope, Server/* $scope, $location, $http */) {
     Server.getListOfSchools("", function(error, resp){
@@ -176,6 +175,7 @@ app.controller('PageCtrl', function ($scope, Server /* $scope, $location, $http 
     $scope.advisors = false;
     $scope.honorboard = false;
     $scope.friends = false;
+    $scope.joinTeam = false;
   };
 
   $scope.message = true;
@@ -213,6 +213,11 @@ app.controller('PageCtrl', function ($scope, Server /* $scope, $location, $http 
    $scope.friendsClick = function() {
     reset();
     $scope.friends = true;
+  };
+
+  $scope.joinTeamClick = function() {
+    reset();
+    $scope.joinTeam = true;
   };
   
 
