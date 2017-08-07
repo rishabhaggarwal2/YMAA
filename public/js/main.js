@@ -23,7 +23,8 @@ app.config(['$routeProvider', function ($routeProvider) {
     .when("/chapters", {templateUrl: "../partials/chapters.html", controller: "ChaptersCtrl"})
     .when("/404", {templateUrl: "../partials/four.html", controller: "FourCtrl"})
     .when("/map", {templateUrl: "../partials/four.html", controller: "TempCtrl"})
-    .when("/startAChapter", {templateUrl: "../partials/startAChapter.html", controller: "PageCtrl"})
+    .when("/syllabus", {templateUrl: "../partials/syllabus.html", controller: "PageCtrl"})
+    .when("/tshirts", {templateUrl: "../partials/tshirts.html", controller: "PageCtrl"})
 
     .when("/:school_name", {templateUrl: "../partials/ucla.html", controller: "ChapterCtrl"})
 
