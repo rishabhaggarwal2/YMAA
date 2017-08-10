@@ -25,7 +25,7 @@ app.config(['$routeProvider', function ($routeProvider) {
     .when("/map", {templateUrl: "../partials/four.html", controller: "TempCtrl"})
     .when("/syllabus", {templateUrl: "../partials/syllabus.html", controller: "PageCtrl"})
     .when("/tshirts", {templateUrl: "../partials/tshirts.html", controller: "PageCtrl"})
-
+    .when("/newMember", {templateUrl: "../partials/newMember.html", controller: "PageCtrl"})
     .when("/:school_name", {templateUrl: "../partials/ucla.html", controller: "ChapterCtrl"})
 
     // else 404
