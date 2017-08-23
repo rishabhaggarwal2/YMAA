@@ -3,7 +3,7 @@
     <div class="overlay container-fluid">
         <div class="container text-center">
             <div class="row">
-                <h1>{{school.name}}</h1>                
+                <h1>{{school.name.replace('_',' ')}}</h1>                
             </div>
             <div class="row">
                 <h2>Creating a Future Worth Remembering</h2>
@@ -120,9 +120,9 @@
         <br>
         <div class="row">
 
-            <div class="member" ng-repeat="member in school.team" ng-show="member.name">
+            <div class="member" ng-repeat="member in school.team" ng-show="member.name" data-line="{{member.about.substring(0, 50)}}" ng-click="openLink(member.link)">
                 <!-- <a href="https://www.linkedin.com"><i class="fa fa-linkedin-square fa-2x icon" aria-hidden="true"></i></a> -->
-                <a ng-href="{{member.link}}"><img ng-src="{{member.prof_url}}"></a>
+                <img ng-src="{{member.prof_url}}">
                 <p class="name">{{member.name}}</p>
                 <p class="post">{{member.position}}</p>
             </div>

@@ -36,6 +36,8 @@ app.config(['$routeProvider', function ($routeProvider) {
  * Controls the Home
  */
 app.controller('HomeCtrl', function ($scope, Server/* $scope, $location, $http */) {
+  $scope.showAlert = 1;
+
   function rotateText(){
     var text = $("[data-rotateText]").attr('data-rotateText');
     text = text.split(",");
@@ -51,17 +53,38 @@ app.controller('HomeCtrl', function ($scope, Server/* $scope, $location, $http *
       setTimeout(function(){
         $("[data-rotateText]").html(text[index]);
         $("[data-rotateText]").css("opacity","1");
-      }, 1000);
+      }, 5000);
     }, delay);
 
   }
 
   rotateText();
 
+  window.setTimeout(function(){
+    if($scope.showAlert === 1) {
+      $scope.showAlert = 0;
+      $(".popup").css("display","flex").hide().fadeIn("slow");
+    }
+  }, 20000);
+
   Server.getListOfSchools("", function(error, resp){
      console.log(error, resp);
      $scope.schools = resp.data;
    });
+
+  $(".signUpHomeBtn").click(function(){
+    $scope.showAlert = 0;
+    var email = $("input[name='emailSignup']")[0].value;
+    window.open("http://theyouthmovement.us12.list-manage1.com/subscribe?u=5f851aa4acb0fd4c38a3e670b&id=e490bdf6a7&MERGE0="+email);
+  });
+
+  $('.popup').on('click', function(e) {
+    if (e.target !== this)
+      return;
+    
+    $(".popup").fadeOut("slow").hide();
+    $scope.showAlert = 0;
+  });
 
 });
 
@@ -263,6 +286,9 @@ app.controller('ChapterCtrl', function ($sce, $scope, $routeParams, Server/* $sc
     }
   });
 
+  $scope.openLink = function(link) {
+    window.open(link);
+  };
 
   $(".sub_navbar a").off().one("click", function(e){
     e.preventDefault();
@@ -521,7 +547,7 @@ app.controller('CreateCtrl', function ($scope, $routeParams, Server) {
       address: $scope.address,
       state: $scope.state,
       fb_link: $scope.fb_link,
-      instagram_link: $scope.fb_link,
+      instagram_link: $scope.instagram_link,
       twitter_link: $scope.twitter_link,
       calendar: $scope.calendar,
       insta_galleria: $scope.insta_galleria,
