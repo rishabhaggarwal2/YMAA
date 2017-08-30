@@ -1075,14 +1075,17 @@ table td {
   border: 1px solid #000;
 }
 /*# sourceMappingURL=main.css.map */
-.member:hover:after {
+.member.memberAbout:hover:after {
   opacity: 1;
   transform: scale(1);
 }
 .member:hover:before {
   opacity: 1;
 }
-.member:after {
+.member.linkedIn:hover:before {
+  opacity: 1;
+}
+.member.memberAbout:after {
     content: attr(data-line);
     display: block;
     width: 200px;
@@ -1096,23 +1099,25 @@ table td {
     color: #fff;
     justify-content: center;
     align-items: flex-end;
-    padding: 23px 0;
+    padding: 23px 5px;
+    font-size: 12px;
     transition: 0.3s ease all;
     -webkit-transition: 0.3s ease all;
     -moz-transition: 0.3s ease all;
     -ms-transition: 0.3s ease all;
     -o-transition: 0.3s ease all;
 }
-.member:before {
-  content: 'LinkedIn';
+.member.linkedIn:before {
+  content: '';
   position: absolute;
   color: #fff;
   opacity: 0;
   z-index: 1;
   text-align: center;
-  left: 0;
-  width: 200px;
-  height: 200px;
+  left: 50%;
+  right: 50%;
+  width: 10px;
+  height: 10px;
   font-size: 10px;
   color: #ccc;
   font-family: Oswald;
@@ -1120,6 +1125,9 @@ table td {
   display: flex;
   justify-content: center;
   padding: 5px;
+  background: url('../assets/images/linkedin.svg');
+  background-size: contain;
+  top: 180px;
 }
 .popup {
   position: fixed;

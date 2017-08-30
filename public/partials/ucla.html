@@ -120,7 +120,7 @@
         <br>
         <div class="row">
 
-            <div class="member" ng-repeat="member in school.team" ng-show="member.name" data-line="{{member.about.substring(0, 50)}}" ng-click="openLink(member.link)">
+            <div class="member" ng-repeat="member in school.team" ng-show="member.name" data-line="{{member.about.substring(0, 150)}}" ng-click="openLink(member.link)" ng-class="{linkedIn: member.link.length, memberAbout: member.link.length || member.about.length}">
                 <!-- <a href="https://www.linkedin.com"><i class="fa fa-linkedin-square fa-2x icon" aria-hidden="true"></i></a> -->
                 <img ng-src="{{member.prof_url}}">
                 <p class="name">{{member.name}}</p>
