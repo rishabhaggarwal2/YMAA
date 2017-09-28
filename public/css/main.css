@@ -1146,7 +1146,7 @@ table td {
   width: 80%;
   max-width: 400px;
   background: #f3f3f3;
-  padding: 40px;
+  /*padding: 40px;*/
   box-sizing: content-box;
   border-radius: 4px;
 }
