@@ -30,6 +30,7 @@ app.config(['$routeProvider', function ($routeProvider) {
     .when("/futureOfCare", {templateUrl: "../partials/futureOfCare.html", controller: "PageCtrl"})
     .when("/uscApply", {templateUrl: "../partials/uscApply.html", controller: "PageCtrl"})
     .when("/press", {templateUrl: "../partials/press.html", controller: "PageCtrl"})
+    .when("/ab2101", {templateUrl: "../partials/ab2101.html", controller: "PageCtrl"})
     .when("/joinOurTeam", {templateUrl: "../partials/joinOurTeam.html", controller: "PageCtrl"})
 
     .when("/:school_name", {templateUrl: "../partials/ucla.html", controller: "ChapterCtrl"})
