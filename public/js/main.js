@@ -71,7 +71,7 @@ app.controller('HomeCtrl', function ($scope, Server/* $scope, $location, $http *
       $scope.showAlert = 0;
       $(".popup").css("display","flex").hide().fadeIn("slow");
     }
-  }, 5000);
+  }, 3000);
 
   Server.getListOfSchools("", function(error, resp){
      console.log(error, resp);
