@@ -33,6 +33,7 @@ app.config(['$routeProvider', function ($routeProvider) {
     .when("/ab568", {templateUrl: "../partials/ab568.html", controller: "PageCtrl"})
     .when("/joinOurTeam", {templateUrl: "../partials/joinOurTeam.html", controller: "PageCtrl"})
     .when("/orderKits", {templateUrl: "../partials/orderKits.html", controller: "PageCtrl"})
+    .when("/support", {templateUrl: "../partials/support.html", controller: "PageCtrl"})
 
     .when("/:school_name", {templateUrl: "../partials/ucla.html", controller: "ChapterCtrl"})
 
