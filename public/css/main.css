@@ -1229,3 +1229,53 @@ table td {
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
 }
+
+/*support page*/
+
+#supportPage {
+  background: url("../assets/images/ucla.jpg");
+  background-size: cover !important;
+  font-size: 18px;
+  color: #fff;
+  transition: 0.5s ease all;
+  -webkit-transition: 0.5s ease all;
+  -moz-transition: 0.5s ease all;
+  -ms-transition: 0.5s ease all;
+  -o-transition: 0.5s ease all;
+  height: auto;
+  padding-top: 100px;
+  box-shadow: 0px 0px 40px #eee; }
+  #supportPage .overlay {
+    background: rgba(104, 39, 119, 0.4); /*affect translucency with last value*/
+    /* Old browsers */
+    padding: 160px 0;
+    overflow: hidden; }
+  #supportPage * {
+    margin: 0; }
+  #supportPage .container {
+    margin: auto; }
+  #supportPage h1 {
+    max-width: 800px;
+    margin: auto;
+    font-weight: normal;
+    font-size: 3.8em;
+    transition: 1s ease all;
+    -webkit-transition: 1s ease all;
+    -moz-transition: 1s ease all;
+    -ms-transition: 1s ease all;
+    -o-transition: 1s ease all; }
+    @media (max-width: 767px) {
+      #supportPage h1 {
+        font-size: 2.2em;
+        max-width: 80%;
+        height: 200px;
+        display: flex;
+        flex-direction: column-reverse; } }
+  #supportPage .row {
+    margin-top: 10px; }
+  #supportPage a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.5em; }
+  #supportPage .chapterSocials a {
+    margin: 0px 20px; }
