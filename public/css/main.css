@@ -1233,7 +1233,7 @@ table td {
 /*support page*/
 
 #supportPage {
-  background: url("../assets/images/ucla.jpg");
+  background: url("../assets/images/careOldYoung.jpg");
   background-size: cover !important;
   font-size: 18px;
   color: #fff;
@@ -1246,7 +1246,7 @@ table td {
   padding-top: 100px;
   box-shadow: 0px 0px 40px #eee; }
   #supportPage .overlay {
-    background: rgba(104, 39, 119, 0.4); /*affect translucency with last value*/
+    background: rgba(104, 39, 119, 0.4); /*affect overlay color with first three values, translucency with last value*/
     /* Old browsers */
     padding: 160px 0;
     overflow: hidden; }
