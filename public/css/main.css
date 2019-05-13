@@ -1279,3 +1279,8 @@ table td {
     font-size: 1.5em; }
   #supportPage .chapterSocials a {
     margin: 0px 20px; }
+
+#inner {
+  width: 50%;
+  margin: 0 auto;
+}
