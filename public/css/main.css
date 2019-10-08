@@ -26,7 +26,7 @@ h1, h2, h3, h4, h5, h6, a {
 .teamMember img {
     border-radius: 50%;
     width: 75%;
-    max-height: 225px;
+    max-height: 325px;
     margin: 30px;
     object-fit: cover;
 }
@@ -36,7 +36,7 @@ h1, h2, h3, h4, h5, h6, a {
 .teamMember img {
     border-radius: 50%;
     width: 45%;
-    max-height: 350px;
+    max-height: 400px;
     margin: 30px;
     object-fit: cover;
 }
