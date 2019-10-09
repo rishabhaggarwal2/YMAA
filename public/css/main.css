@@ -21,6 +21,33 @@ body, html {
 h1, h2, h3, h4, h5, h6, a {
   font-family: Bebas, Bebas Neue; }
 
+/* TEAM MEMBERS - added by mittun */
+@media (min-width:992px) {
+.teamMember img {
+    border-radius: 50%;
+    width: 75%;
+    max-height: 325px;
+    margin: 30px;
+    object-fit: cover;
+}
+}
+
+@media (max-width:991px) {
+.teamMember img {
+    border-radius: 50%;
+    width: 45%;
+    max-height: 400px;
+    margin: 30px;
+    object-fit: cover;
+}
+}
+
+/* OUR FRIENDS - added by mittun */
+.friendsLogo img {
+    width: 100%;
+    margin: 10px;
+}
+
 a.sexy {
   letter-spacing: 2.78px;
   border-radius: 4px;

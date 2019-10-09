@@ -35,8 +35,8 @@ app.config(['$routeProvider', function ($routeProvider) {
     .when("/orderKits", {templateUrl: "../partials/orderKits.html", controller: "PageCtrl"})
     .when("/support", {templateUrl: "../partials/support.html", controller: "PageCtrl"})
     .when("/summit2019", {templateUrl: "../partials/summit2019.html", controller: "PageCtrl"})
-	.when("/stripe-landing-funraise", {templateUrl: "../partials/stripe-landing-funraise.html", controller: "PageCtrl"})
-	.when("/stripe-landing-public", {templateUrl: "../partials/stripe-landing-public.html", controller: "PageCtrl"})
+	.when("/stripe-landing-funraise", {templateUrl: "../partials/Stripe-landing-funraise.html", controller: "PageCtrl"})
+	.when("/stripe-landing-public", {templateUrl: "../partials/Stripe-landing-public.html", controller: "PageCtrl"})
 
 
     .when("/:school_name", {templateUrl: "../partials/ucla.html", controller: "ChapterCtrl"})
