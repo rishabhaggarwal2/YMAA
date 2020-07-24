@@ -12,7 +12,7 @@
     "body-parser": "latest",
     "ejs": "2.5.1",
     "express": "latest",
-    "lodash": "latest",
+    "lodash": "^4.17.19",
     "mongoose": "latest",
     "multer": "1.1.0",
     "path": "latest",
