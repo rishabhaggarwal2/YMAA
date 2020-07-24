@@ -8,7 +8,7 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "aws-sdk": "latest",
+    "aws-sdk": "^2.719.0",
     "body-parser": "^1.19.0",
     "core-util-is": "^1.0.2",
     "ejs": "2.5.1",
