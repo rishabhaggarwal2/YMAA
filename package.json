@@ -11,7 +11,7 @@
     "aws-sdk": "latest",
     "body-parser": "latest",
     "ejs": "2.5.1",
-    "express": "latest",
+    "express": "^4.17.1",
     "lodash": "^4.17.19",
     "mongoose": "latest",
     "multer": "1.1.0",
