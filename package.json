@@ -18,7 +18,7 @@
     "multer": "^1.1.0",
     "path": "^0.12.7",
     "stripe": "^8.78.0",
-    "validator": "^13.1.1"
+    "validator": "^13.7.0"
   },
   "repository": {
     "type": "git",
