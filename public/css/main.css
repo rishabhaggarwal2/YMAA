@@ -81,7 +81,9 @@ a.purple:hover {
   margin-top: 10px; }
 
 .mybuttons {
-  margin-top: 10px; 
+  margin-top: 10px;
+  padding-right: 30px;
+  padding-left: 30px; 
   justify-content: center}
 
 * {
@@ -508,11 +510,15 @@ footer {
     width: 100%;
     margin: auto;
     margin-top: 10px; }
-    footer .signup input {
+  footer .signup input {
       min-width: 60%; }
   footer i.fa.fa-heart {
     color: #eaad25;
     margin-right: 0px; }
+  footer.sexy.highlight {
+      border: 1px solid #81028d;
+      background: rgba(234, 173, 37, 0.6); }
+
 
 .sub-nav {
   width: 100%;
