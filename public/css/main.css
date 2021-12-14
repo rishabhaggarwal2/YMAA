@@ -80,12 +80,6 @@ a.purple:hover {
 .buttons {
   margin-top: 10px; }
 
-.mybuttons {
-  margin-top: 10px;
-  padding-right: 30px;
-  padding-left: 30px; 
-  justify-content: center}
-
 * {
   transition: 0.2s ease all;
   -webkit-transition: 0.2s ease all;
