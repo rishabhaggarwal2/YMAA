@@ -515,9 +515,27 @@ footer {
   footer i.fa.fa-heart {
     color: #eaad25;
     margin-right: 0px; }
-  footer.sexy.highlight {
+  footer .sexy {
+      letter-spacing: 2.78px;
+      border-radius: 4px;
+      padding: 10px 40px;
+      border: 1px solid #fff;
+      text-decoration: none;
+      background: transparent;
+      color: #fff;
+      font-weight: bold;
+      transition: 0.3s ease all;
+      -webkit-transition: 0.3s ease all;
+      -moz-transition: 0.3s ease all;
+      -ms-transition: 0.3s ease all;
+      -o-transition: 0.3s ease all; }
+    
+  footer .sexy.highlight {
       border: 1px solid #81028d;
       background: rgba(234, 173, 37, 0.6); }
+    
+  footer .sexy:hover {
+      background: rgba(255, 255, 255, 0.4); }
 
 
 .sub-nav {
